@@ -1,0 +1,13 @@
+c:\users\k.vineel\documents\visual studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\bin\Debug\Actigraph.Forms.Reports.exe
+c:\users\k.vineel\documents\visual studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\bin\Debug\log4net.dll
+c:\users\k.vineel\documents\visual studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\bin\Debug\Actigraph.Parser.dll
+C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\bin\Debug\Actigraph.Parser.pdb
+C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\bin\Debug\log4net.xml
+C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\obj\Debug\Actigraph.Forms.Reports.csprojResolveAssemblyReference.cache
+C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\obj\Debug\Actigraph.Forms.Reports.LoadData.resources
+C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\obj\Debug\Actigraph.Forms.Reports.Properties.Resources.resources
+C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\obj\Debug\Actigraph.Forms.Reports.csproj.GenerateResource.Cache
+C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\obj\Debug\Actigraph.Forms.Reports.exe
+C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\obj\Debug\Actigraph.Forms.Reports.pdb
+C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\bin\Debug\Actigraph.Forms.Reports.exe.config
+C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\bin\Debug\Actigraph.Forms.Reports.pdb

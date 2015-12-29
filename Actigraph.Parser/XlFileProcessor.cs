@@ -22,10 +22,17 @@ namespace Actigraph.Parser
            if (File.Exists(absoluteFilePath))
            {
                var result = LoadXls(absoluteFilePath,"Daily");
+                    string[] separators = { ".agd" };
                var detailSubjectRecords = (from DataRow dRow in result.Rows
-                   select new SubjectData()
+                   let splitString =
+                       dRow["Filename"].ToString().Split(separators, StringSplitOptions.None)[0].Split('_') 
+               
+                    select new SubjectData()
                    {
-                       ID = dRow["Filename"].ToString().Split('_')[0],
+                       
+                        ID = splitString[0],
+                       Hospital = splitString[1],
+                       Cottage = splitString[2],
                        Age = Convert.ToInt32(dRow["Age"]),
                        Gender = dRow["Gender"].ToString(),
                        Date = Convert.ToDateTime(dRow["Date"]),

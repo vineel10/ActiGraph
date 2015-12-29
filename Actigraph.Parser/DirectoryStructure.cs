@@ -75,7 +75,6 @@ namespace Actigraph.Parser
         {
             try
             {
-
            
             var currentFolderName = Path.Combine(ActigraphReportsFolderName, folderName + "-" + DateTime.Now.ToShortDateString());
             if (!Directory.Exists(currentFolderName))
@@ -94,10 +93,9 @@ namespace Actigraph.Parser
 
         public static void MoveProcessedFile(string processedFile)
         {
-            File.Copy(processedFile,Path.Combine(ActigraphDataFilesProcessedFolderName,Path.GetFileNameWithoutExtension(processedFile) + DateTime.Now.ToShortDateString() + Path.GetExtension(processedFile)),true);
-            File.Delete(processedFile);
+            string absolutePath = Path.Combine(DirectoryStructure.ActigraphDataFilesFolderName, processedFile);
+            File.Copy(absolutePath, Path.Combine(ActigraphDataFilesProcessedFolderName,Path.GetFileNameWithoutExtension(processedFile) + DateTime.Now.ToShortDateString() + Path.GetExtension(processedFile)),true);
+            File.Delete(absolutePath);
         }
-
-        
     }
 }

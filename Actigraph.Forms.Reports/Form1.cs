@@ -46,25 +46,33 @@ namespace Actigraph.Forms.Reports
             {
                 DirectoryStructure.CreateDirectoryStructure();
                 log.Info("Folder structure created.");
-                var stagedFiles = DirectoryStructure.GetStagedFiles();
-                lblStagedFiles.Text = string.Format("Currently you have {0} files to process.",
-                    stagedFiles.Count());
-                listView1.View = View.Details;
-                //listView1.GridLines = true;
-                listView1.FullRowSelect = true;
-                listView1.Sort();
-                //listView1.CheckBoxes = true;
-                //Add column header
-                listView1.Columns.Add("FileName", 300);
-                // listView1.Items.AddRange(stagedFiles);
-                foreach (var itm in stagedFiles.Select(item => new ListViewItem(item)))
-                {
-                    listView1.Items.Add(Path.GetFileName(itm.Text));
-                }
+                CreateList();
             }
             catch (Exception exp)
             {
                 log.Error(exp);
+            }
+        }
+
+        private void CreateList()
+        {
+
+            var stagedFiles = DirectoryStructure.GetStagedFiles();
+            lblStagedFiles.Text = string.Format("Currently you have {0} files to process.",
+                stagedFiles.Count());
+            listView1.Columns.Clear();
+            listView1.Items.Clear();
+            listView1.View = View.Details;
+            //listView1.GridLines = true;
+            listView1.FullRowSelect = true;
+            listView1.Sort();
+            //listView1.CheckBoxes = true;
+            //Add column header
+            listView1.Columns.Add("FileName", 300);
+            // listView1.Items.AddRange(stagedFiles);
+            foreach (var itm in stagedFiles.Select(item => new ListViewItem(item)))
+            {
+                listView1.Items.Add(Path.GetFileName(itm.Text));
             }
         }
 
@@ -111,7 +119,8 @@ namespace Actigraph.Forms.Reports
                     lblProcessing.Text = "Processing 1" + " of " + processedBar.Maximum;
                     foreach (var item in subjectRecordses)
                     {
-                        CreateDocFiles files = new CreateDocFiles();
+                        //CreateDocFiles files = new CreateDocFiles();
+                        CreatePdfReports files = new CreatePdfReports();
                         files.fileExtension = ".PDF";
                         files.CreateReports(item);
                         files = null;
@@ -119,10 +128,13 @@ namespace Actigraph.Forms.Reports
                         lblProcessing.Text = "Processing " + i + " of " + processedBar.Maximum;
                         Application.DoEvents();
                         i++;
-                        
+
                     }
+                    DirectoryStructure.MoveProcessedFile(listView1.SelectedItems[0].SubItems[0].Text);
                     processedBar.Visible = false;
                     lblProcessing.Visible = false;
+                    CreateList();
+                    button1.Enabled = true;
                     MessageBox.Show("Reports generated Successfuuly!!!. Please press Ok to open reports folder.");
                     Process.Start(DirectoryStructure.ActigraphReportsFolderName);
                 }
@@ -144,7 +156,7 @@ namespace Actigraph.Forms.Reports
         {
             button1.Enabled = false;
             GenerateReports();
-            DirectoryStructure.MoveProcessedFile(listView1.SelectedItems[0].SubItems[0].Text);
+            
         }
 
         private void button2_Click(object sender, EventArgs e)

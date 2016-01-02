@@ -11,3 +11,6 @@ C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.
 C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\obj\Debug\Actigraph.Forms.Reports.pdb
 C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\bin\Debug\Actigraph.Forms.Reports.exe.config
 C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\bin\Debug\Actigraph.Forms.Reports.pdb
+C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\bin\Debug\itextsharp.dll
+C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\bin\Debug\itextsharp.xml
+C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\obj\Debug\Actigraph.Forms.Reports.Form2.resources

@@ -41,6 +41,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.lblStagedFiles = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,6 +75,7 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.txtThresholdCutoff);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnCancel);
@@ -82,9 +84,9 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.listView1);
             this.panel1.Controls.Add(this.lblStagedFiles);
-            this.panel1.Location = new System.Drawing.Point(29, 60);
+            this.panel1.Location = new System.Drawing.Point(12, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(513, 345);
+            this.panel1.Size = new System.Drawing.Size(543, 345);
             this.panel1.TabIndex = 2;
             // 
             // txtThresholdCutoff
@@ -98,7 +100,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(37, 181);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(191, 23);
@@ -112,10 +114,10 @@
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(260, 216);
+            this.btnCancel.Location = new System.Drawing.Point(369, 221);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(0);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(209, 34);
+            this.btnCancel.Size = new System.Drawing.Size(168, 34);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -125,7 +127,7 @@
             // 
             this.lblProcessing.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProcessing.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblProcessing.Location = new System.Drawing.Point(150, 310);
+            this.lblProcessing.Location = new System.Drawing.Point(191, 306);
             this.lblProcessing.Name = "lblProcessing";
             this.lblProcessing.Size = new System.Drawing.Size(159, 23);
             this.lblProcessing.TabIndex = 4;
@@ -136,7 +138,7 @@
             this.processedBar.AccessibleDescription = "";
             this.processedBar.BackColor = System.Drawing.Color.Lime;
             this.processedBar.ForeColor = System.Drawing.Color.White;
-            this.processedBar.Location = new System.Drawing.Point(121, 284);
+            this.processedBar.Location = new System.Drawing.Point(162, 280);
             this.processedBar.Name = "processedBar";
             this.processedBar.Size = new System.Drawing.Size(226, 23);
             this.processedBar.TabIndex = 3;
@@ -149,10 +151,10 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(19, 216);
+            this.button1.Location = new System.Drawing.Point(14, 221);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(209, 34);
+            this.button1.Size = new System.Drawing.Size(168, 34);
             this.button1.TabIndex = 2;
             this.button1.Text = "Generate Reports";
             this.button1.UseVisualStyleBackColor = false;
@@ -163,10 +165,10 @@
             this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.FullRowSelect = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView1.Location = new System.Drawing.Point(19, 54);
+            this.listView1.Location = new System.Drawing.Point(10, 54);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(450, 95);
+            this.listView1.Size = new System.Drawing.Size(527, 95);
             this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
@@ -178,6 +180,22 @@
             this.lblStagedFiles.Name = "lblStagedFiles";
             this.lblStagedFiles.Size = new System.Drawing.Size(428, 24);
             this.lblStagedFiles.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.AutoSize = true;
+            this.button2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(193, 221);
+            this.button2.Margin = new System.Windows.Forms.Padding(0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(168, 34);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Refresh List";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // LoadData
             // 
@@ -213,6 +231,7 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox txtThresholdCutoff;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
     }
 }
 

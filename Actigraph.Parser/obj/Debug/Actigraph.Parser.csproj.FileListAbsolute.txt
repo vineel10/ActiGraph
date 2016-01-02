@@ -3,3 +3,5 @@ C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.
 C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\obj\Debug\Actigraph.Parser.csproj.ResolveComReference.cache
 C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\obj\Debug\Actigraph.Parser.dll
 C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\obj\Debug\Actigraph.Parser.pdb
+C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\bin\Debug\itextsharp.dll
+C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\bin\Debug\itextsharp.xml

@@ -573,3 +573,652 @@
 2015-12-26 21:39:50,471 [8] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
 2015-12-26 21:40:45,254 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
 2015-12-26 21:40:45,690 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-27 02:57:30,701 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-27 02:57:31,410 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-27 03:01:06,108 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-27 03:01:06,225 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 20:46:09,246 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 20:46:10,327 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 20:48:17,241 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 20:48:17,417 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 20:48:22,017 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-29 20:48:33,494 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 20:48:33,646 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 20:49:22,455 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-29 20:50:34,229 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 20:50:34,373 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 20:52:14,279 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 20:52:14,351 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 21:13:31,753 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 21:13:31,917 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 21:17:05,969 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 21:17:06,133 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 21:17:13,295 [9] ERROR Actigraph.Forms.Reports.LoadData - System.IO.IOException: The process cannot access the file 'c:\entertainment\Chapter1_Example1.pdf' because it is being used by another process.
+   at Actigraph.Parser.Generate_DocFiles.CreatePdfReports.CreateReports(SubjectRecords subjectRecords) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\Generate DocFiles\CreatePdfReports.cs:line 32
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 117
+2015-12-29 21:20:19,025 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 21:20:19,228 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 21:23:16,196 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 21:23:16,308 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 21:33:14,833 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 21:33:14,953 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 21:33:22,605 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-29 21:33:25,397 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 21:33:25,521 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 21:33:39,886 [10] ERROR Actigraph.Forms.Reports.LoadData - System.IO.IOException: The process cannot access the file 'c:\entertainment\Chapter1_Example1.pdf' because it is being used by another process.
+   at Actigraph.Parser.Generate_DocFiles.CreatePdfReports.CreateReports(SubjectRecords subjectRecords) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\Generate DocFiles\CreatePdfReports.cs:line 32
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 117
+2015-12-29 21:43:47,385 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 21:43:47,509 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 21:43:54,929 [9] ERROR Actigraph.Forms.Reports.LoadData - System.InvalidOperationException: The width cannot be set.
+   at Actigraph.Parser.Generate_DocFiles.CreatePdfReports.CreateReports(SubjectRecords subjectRecords) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\Generate DocFiles\CreatePdfReports.cs:line 32
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 117
+2015-12-29 21:43:56,632 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-29 21:44:47,345 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 21:44:47,469 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 21:54:03,596 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 21:54:03,716 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 21:54:20,434 [9] ERROR Actigraph.Forms.Reports.LoadData - iTextSharp.text.DocumentException: Wrong number of columns.
+   at Actigraph.Parser.Generate_DocFiles.CreatePdfReports.CreateReports(SubjectRecords subjectRecords) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\Generate DocFiles\CreatePdfReports.cs:line 32
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 117
+2015-12-29 21:54:30,635 [9] ERROR Actigraph.Forms.Reports.LoadData - System.IO.IOException: The process cannot access the file 'c:\entertainment\Chapter1_Example1.pdf' because it is being used by another process.
+   at Actigraph.Parser.Generate_DocFiles.CreatePdfReports.CreateReports(SubjectRecords subjectRecords) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\Generate DocFiles\CreatePdfReports.cs:line 32
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 117
+2015-12-29 21:54:32,993 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-29 21:54:36,166 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 21:54:36,270 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 21:55:33,159 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 21:55:33,283 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 21:58:52,884 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 21:58:52,984 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 21:59:57,256 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 21:59:57,360 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:01:34,190 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:01:34,400 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:24:02,704 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:24:02,850 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:26:25,360 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:26:25,622 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:26:29,496 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-29 22:26:43,505 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:26:43,634 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:26:49,474 [10] ERROR Actigraph.Forms.Reports.LoadData - System.IO.IOException: The process cannot access the file 'c:\entertainment\Chapter1_Example1.pdf' because it is being used by another process.
+   at Actigraph.Parser.Generate_DocFiles.CreatePdfReports.CreateReports(SubjectRecords subjectRecords) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\Generate DocFiles\CreatePdfReports.cs:line 32
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 117
+2015-12-29 22:28:04,029 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:28:04,193 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:28:54,374 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:28:54,461 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:30:12,683 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:30:12,782 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:30:56,979 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:30:57,135 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:33:28,319 [11] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:33:28,450 [11] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:33:34,574 [11] ERROR Actigraph.Forms.Reports.LoadData - System.IO.IOException: The process cannot access the file 'c:\entertainment\Chapter1_Example1.pdf' because it is being used by another process.
+   at Actigraph.Parser.Generate_DocFiles.CreatePdfReports.CreateReports(SubjectRecords subjectRecords) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\Generate DocFiles\CreatePdfReports.cs:line 32
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 117
+2015-12-29 22:35:05,324 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:35:05,429 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:35:57,495 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:35:57,669 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:39:15,121 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:39:15,358 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:39:51,807 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-29 22:40:13,551 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:40:13,747 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:42:14,762 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:42:14,870 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:42:58,401 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:42:58,570 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:43:04,018 [10] ERROR Actigraph.Forms.Reports.LoadData - System.IO.IOException: The process cannot access the file 'c:\entertainment\Chapter1_Example1.pdf' because it is being used by another process.
+   at Actigraph.Parser.Generate_DocFiles.CreatePdfReports.CreateReports(SubjectRecords subjectRecords) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\Generate DocFiles\CreatePdfReports.cs:line 32
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 117
+2015-12-29 22:43:57,646 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:43:57,838 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:44:27,611 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:44:27,843 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:45:02,755 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:45:02,826 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:45:08,027 [10] ERROR Actigraph.Forms.Reports.LoadData - System.IO.IOException: The process cannot access the file 'c:\entertainment\Chapter1_Example1.pdf' because it is being used by another process.
+   at Actigraph.Parser.Generate_DocFiles.CreatePdfReports.CreateReports(SubjectRecords subjectRecords) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\Generate DocFiles\CreatePdfReports.cs:line 32
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 117
+2015-12-29 22:45:56,574 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:45:56,756 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:46:58,688 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:46:58,775 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:47:04,827 [9] ERROR Actigraph.Forms.Reports.LoadData - System.IO.IOException: The process cannot access the file 'c:\entertainment\Chapter1_Example1.pdf' because it is being used by another process.
+   at Actigraph.Parser.Generate_DocFiles.CreatePdfReports.CreateReports(SubjectRecords subjectRecords) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\Generate DocFiles\CreatePdfReports.cs:line 32
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 117
+2015-12-29 22:48:04,519 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:48:04,587 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:48:51,519 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:48:51,651 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:49:41,530 [11] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:49:41,697 [11] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:50:41,684 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:50:41,947 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:51:13,776 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:51:13,925 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:51:40,154 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:51:40,361 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:52:14,337 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:52:14,437 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:57:17,361 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:57:17,640 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:58:24,402 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:58:24,578 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 22:59:15,840 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 22:59:16,004 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 23:00:23,307 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 23:00:23,425 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 23:00:54,187 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 23:00:54,354 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 23:01:39,346 [11] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 23:01:39,521 [11] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 23:16:12,559 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 23:16:12,753 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 23:17:07,745 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 23:17:07,858 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 23:17:11,124 [9] ERROR Actigraph.Forms.Reports.LoadData - System.IO.IOException: The process cannot access the file 'c:\entertainment\Chapter1_Example1.pdf' because it is being used by another process.
+   at Actigraph.Parser.Generate_DocFiles.CreatePdfReports.CreateReports(SubjectRecords subjectRecords) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\Generate DocFiles\CreatePdfReports.cs:line 36
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 117
+2015-12-29 23:19:18,404 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 23:19:18,516 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 23:19:21,649 [9] ERROR Actigraph.Forms.Reports.LoadData - System.IO.IOException: The process cannot access the file 'c:\entertainment\Chapter1_Example1.pdf' because it is being used by another process.
+   at Actigraph.Parser.Generate_DocFiles.CreatePdfReports.CreateReports(SubjectRecords subjectRecords) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\Generate DocFiles\CreatePdfReports.cs:line 36
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 117
+2015-12-29 23:28:55,733 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 23:28:55,872 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 23:30:38,285 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 23:30:38,409 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 23:30:41,492 [9] ERROR Actigraph.Forms.Reports.LoadData - System.IO.IOException: The process cannot access the file 'c:\entertainment\Chapter1_Example1.pdf' because it is being used by another process.
+   at Actigraph.Parser.Generate_DocFiles.CreatePdfReports.CreateReports(SubjectRecords subjectRecords) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\Generate DocFiles\CreatePdfReports.cs:line 36
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 117
+2015-12-29 23:36:20,782 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 23:36:20,884 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 23:41:22,008 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 23:41:22,182 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 23:45:33,793 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 23:45:33,892 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 23:46:34,514 [11] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 23:46:34,646 [11] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 23:46:35,819 [11] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-29 23:51:23,637 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 23:51:23,787 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-29 23:52:40,729 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-29 23:52:40,884 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-30 00:00:39,318 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 00:00:39,508 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-30 00:00:43,713 [9] ERROR Actigraph.Forms.Reports.LoadData - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Actigraph.Parser.XlFileProcessor.LoadFile(String filePath) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\XlFileProcessor.cs:line 67
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 100
+2015-12-30 00:00:46,678 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 00:00:54,125 [11] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 00:00:54,209 [11] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-30 00:13:30,393 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 00:13:30,523 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-30 00:15:17,828 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 00:15:17,940 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-30 00:19:46,629 [8] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 00:20:28,438 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 00:20:28,674 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-30 00:21:05,800 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 00:21:06,005 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-30 00:22:33,822 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 00:22:34,070 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-30 00:22:36,346 [8] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 00:23:12,823 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 00:23:12,919 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-30 00:23:49,806 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 00:25:28,521 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 00:25:28,725 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-30 00:25:34,979 [8] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 00:26:31,491 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 00:26:31,655 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-30 00:31:51,449 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 00:31:51,621 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-30 00:31:55,525 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 00:32:22,071 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 00:32:22,232 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-30 00:33:59,883 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 00:33:59,995 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-30 00:35:44,218 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 00:35:44,398 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-30 00:36:07,244 [8] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 19:45:03,309 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 19:45:26,743 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 19:45:37,521 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 19:45:54,124 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 19:47:38,328 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 19:47:57,137 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 19:48:03,878 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 19:48:52,088 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 19:53:42,088 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 19:53:42,374 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-30 19:53:58,412 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 19:54:03,821 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 19:54:03,972 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-30 19:54:22,386 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:00:24,459 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:00:26,829 [8] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:00:36,127 [11] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:00:36,410 [11] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-30 20:04:35,209 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:06:45,266 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:07:08,579 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:11:04,760 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:11:25,975 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:11:46,387 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:12:15,328 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:12:21,988 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:12:43,475 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:12:48,017 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:13:02,877 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:13:05,880 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:14:10,353 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:14:21,749 [8] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:17:59,251 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:18:05,489 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:18:10,796 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:18:12,686 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:20:03,599 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:20:10,194 [8] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:20:15,835 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:20:20,330 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:20:52,288 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:20:56,569 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:21:00,170 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:21:01,888 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:21:06,841 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:21:08,965 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:22:46,895 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:22:49,987 [8] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:22:57,016 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:22:59,896 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:23:25,872 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:23:30,370 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:24:34,675 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:24:36,564 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:30:22,333 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:30:28,555 [8] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:30:37,854 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:30:40,454 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:30:50,742 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:31:05,216 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:31:13,371 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:31:17,869 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:31:31,082 [11] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:32:44,584 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:33:00,107 [8] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:34:19,198 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:35:25,125 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:35:31,019 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:35:39,705 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:35:42,420 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:36:26,165 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:36:32,519 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:36:38,299 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:38:54,610 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:39:00,963 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:39:47,576 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:39:52,496 [8] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:40:28,544 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:40:51,816 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:41:51,591 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:42:08,752 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:42:14,625 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:42:32,199 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:47:53,295 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:47:57,332 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:48:16,649 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:48:20,164 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:48:27,220 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:48:43,825 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:48:56,367 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:49:00,833 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:50:22,824 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:50:43,540 [8] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:50:49,229 [11] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:50:57,118 [11] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:51:41,038 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:51:46,215 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:51:59,611 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:52:02,175 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:52:09,727 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:52:13,324 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:52:21,731 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:52:27,265 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:52:40,737 [11] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:52:43,299 [11] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:52:51,266 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:52:55,436 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:53:09,813 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:53:12,799 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:53:19,150 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:53:21,993 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:56:02,537 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:56:49,283 [8] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:57:21,055 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:57:25,584 [8] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:59:17,910 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:59:23,187 [8] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:59:28,459 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:59:33,466 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:59:44,323 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:59:49,272 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 20:59:55,299 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 20:59:58,008 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 21:00:06,313 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:01:04,261 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:01:11,611 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 21:02:40,833 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:02:54,317 [8] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 21:03:20,667 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:03:23,017 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 21:03:29,553 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:03:31,964 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 21:03:38,469 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:03:42,631 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 21:03:51,360 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:03:54,543 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 21:03:59,918 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:04:06,761 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 21:04:14,850 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:04:19,441 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 21:04:32,287 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:04:34,400 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 21:09:30,403 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:09:39,387 [8] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 21:09:49,533 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:09:59,957 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 21:10:05,699 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:10:17,597 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 21:10:28,774 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:10:41,585 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 21:11:39,887 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:11:49,424 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:11:53,704 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 21:12:20,340 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:12:24,117 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 21:12:29,743 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:12:34,460 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 21:12:39,934 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:12:43,844 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 21:12:49,688 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:12:58,033 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 21:13:09,310 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:13:14,630 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 21:16:14,654 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:16:21,726 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 21:16:59,319 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:17:09,295 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 21:18:02,749 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:18:47,410 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:19:07,332 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 21:19:42,079 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:19:52,009 [8] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-30 21:20:05,284 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-30 21:20:13,979 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-31 02:25:44,665 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-31 02:25:49,256 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-31 02:26:10,940 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-31 02:26:11,245 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-31 02:26:18,424 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-31 02:26:47,340 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-31 02:26:47,438 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-31 02:37:06,706 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-31 02:37:06,817 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-31 02:37:22,713 [8] ERROR Actigraph.Forms.Reports.LoadData - System.IO.IOException: The process cannot access the file 'C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\bin\Debug\ActigraphDataFiles\Export_Actigraph_dancing_mind30-12-201530-12-2015.xlsx' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.File.InternalDelete(String path, Boolean checkHost)
+   at System.IO.File.Delete(String path)
+   at Actigraph.Parser.DirectoryStructure.MoveProcessedFile(String processedFile) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\DirectoryStructure.cs:line 94
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 133
+2015-12-31 02:55:16,404 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-31 02:55:16,684 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-31 02:56:33,342 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-31 02:56:33,462 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-31 02:56:39,231 [9] ERROR Actigraph.Forms.Reports.LoadData - System.ObjectDisposedException: Cannot access a closed file.
+   at Actigraph.Parser.Generate_DocFiles.CreatePdfReports.CreateReports(SubjectRecords subjectRecords) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\Generate DocFiles\CreatePdfReports.cs:line 37
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 125
+2015-12-31 02:58:49,424 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-31 02:58:49,559 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-31 03:21:23,242 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-31 03:21:24,482 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-31 03:23:12,491 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-31 03:23:12,788 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-31 03:23:16,028 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-31 03:23:56,323 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-31 03:23:58,052 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-31 03:25:33,347 [8] ERROR Actigraph.Forms.Reports.LoadData - System.ObjectDisposedException: Cannot access a closed file.
+   at Actigraph.Parser.Generate_DocFiles.CreatePdfReports.CreateReports(SubjectRecords subjectRecords) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\Generate DocFiles\CreatePdfReports.cs:line 37
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 125
+2015-12-31 03:28:37,800 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-31 03:28:38,093 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-31 03:32:27,950 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-31 03:32:29,491 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-31 03:36:52,788 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2015-12-31 03:36:53,065 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2015-12-31 03:38:18,624 [8] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2015-12-31 03:53:03,341 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 13:56:46,916 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2016-01-02 15:12:45,868 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 15:12:55,012 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2016-01-02 15:13:15,831 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 15:13:16,010 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 15:22:21,871 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 15:22:22,027 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 15:26:01,071 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 15:26:01,166 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 15:30:32,889 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 15:30:33,061 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 15:30:52,564 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2016-01-02 15:31:30,666 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 15:31:30,912 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 15:32:04,252 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 15:32:04,535 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 15:32:07,345 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2016-01-02 15:32:21,851 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 15:32:22,042 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 15:33:15,780 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 15:33:16,307 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 15:33:22,400 [9] ERROR Actigraph.Forms.Reports.LoadData - iTextSharp.text.DocumentException: The table width must be greater than zero.
+   at Actigraph.Parser.Generate_DocFiles.CreatePdfReports.CreateReports(SubjectRecords subjectRecords) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\Generate DocFiles\CreatePdfReports.cs:line 42
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 124
+2016-01-02 15:33:27,003 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2016-01-02 15:33:45,250 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 15:33:45,552 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 15:35:28,504 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 15:35:28,638 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 15:36:06,864 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 15:36:07,131 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 15:36:47,633 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 15:36:47,895 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 15:38:15,106 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 15:38:15,333 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 15:39:38,473 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 15:39:38,715 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 15:39:44,963 [9] ERROR Actigraph.Forms.Reports.LoadData - System.IO.IOException: The process cannot access the file 'C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\bin\Debug\ActigraphDataFiles\Export_Actigraph_dancing_mind30-12-201530-12-201530-12-201531-12-201502-01-2016.xlsx' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.File.InternalDelete(String path, Boolean checkHost)
+   at System.IO.File.Delete(String path)
+   at Actigraph.Parser.DirectoryStructure.MoveProcessedFile(String processedFile) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\DirectoryStructure.cs:line 94
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 131
+2016-01-02 15:39:58,192 [9] ERROR Actigraph.Forms.Reports.LoadData - System.Data.OleDb.OleDbException (0x80004005): External table is not in the expected format.
+   at Actigraph.Parser.XlFileProcessor.LoadFile(String filePath) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\XlFileProcessor.cs:line 79
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 107
+2016-01-02 15:39:59,763 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2016-01-02 15:40:03,483 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 15:40:03,583 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 15:40:29,618 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 15:40:29,746 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 15:41:46,902 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 15:41:47,212 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 15:42:33,305 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 15:42:33,518 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 15:43:47,022 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 15:43:47,152 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 15:44:36,862 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 15:44:37,233 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 15:44:40,019 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2016-01-02 15:44:54,144 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 15:44:54,298 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 15:45:58,744 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 15:45:59,064 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 15:46:02,184 [9] ERROR Actigraph.Forms.Reports.LoadData - System.Data.OleDb.OleDbException (0x80004005): External table is not in the expected format.
+   at Actigraph.Parser.XlFileProcessor.LoadFile(String filePath) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\XlFileProcessor.cs:line 79
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 107
+2016-01-02 15:46:41,289 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 15:46:41,560 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 15:48:46,198 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2016-01-02 16:06:17,211 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 16:06:17,903 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 16:06:34,696 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 16:06:34,859 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 16:06:43,101 [8] ERROR Actigraph.Forms.Reports.LoadData - System.IO.IOException: The process cannot access the file 'C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\bin\Debug\ActigraphDataFiles\Export_Actigraph_dancing_mind30-12-201530-12-201502-01-2016.xlsx' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.File.InternalDelete(String path, Boolean checkHost)
+   at System.IO.File.Delete(String path)
+   at Actigraph.Parser.DirectoryStructure.MoveProcessedFile(String processedFile) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\DirectoryStructure.cs:line 94
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 131
+2016-01-02 16:06:46,498 [8] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2016-01-02 16:06:51,662 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 16:06:51,793 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 16:18:42,614 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 16:18:42,788 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 19:34:48,999 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 19:34:49,175 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 19:34:56,365 [9] ERROR Actigraph.Forms.Reports.LoadData - iTextSharp.text.BadElementException: Byte array is not a valid JPEG-file.
+   at Actigraph.Parser.Generate_DocFiles.CreatePdfReports.CreateReports(SubjectRecords subjectRecords) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\Generate DocFiles\CreatePdfReports.cs:line 43
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 124
+2016-01-02 19:34:59,141 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2016-01-02 19:35:14,225 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 19:35:14,622 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 19:37:48,490 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 19:37:48,610 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 19:46:01,853 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 19:46:02,033 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 19:46:05,911 [9] ERROR Actigraph.Forms.Reports.LoadData - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Actigraph.Parser.Generate_DocFiles.CreatePdfReports.CreateReports(SubjectRecords subjectRecords) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\Generate DocFiles\CreatePdfReports.cs:line 43
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 124
+2016-01-02 19:46:22,004 [9] ERROR Actigraph.Forms.Reports.LoadData - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Actigraph.Parser.Generate_DocFiles.CreatePdfReports.CreateReports(SubjectRecords subjectRecords) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\Generate DocFiles\CreatePdfReports.cs:line 43
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 124
+2016-01-02 19:46:26,941 [9] ERROR Actigraph.Forms.Reports.LoadData - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Actigraph.Parser.Generate_DocFiles.CreatePdfReports.CreateReports(SubjectRecords subjectRecords) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\Generate DocFiles\CreatePdfReports.cs:line 43
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 124
+2016-01-02 19:51:26,065 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 19:51:26,174 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 19:51:31,637 [10] ERROR Actigraph.Forms.Reports.LoadData - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Actigraph.Parser.Generate_DocFiles.CreatePdfReports.CreateReports(SubjectRecords subjectRecords) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\Generate DocFiles\CreatePdfReports.cs:line 43
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 124
+2016-01-02 19:52:44,507 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 19:52:44,721 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 19:54:53,931 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 19:54:54,202 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 19:57:50,245 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 19:57:50,465 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:01:04,429 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:01:04,733 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:03:41,518 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:03:41,748 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:05:17,464 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:05:17,711 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:06:02,052 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:06:02,340 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:09:24,225 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:09:24,353 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:09:26,072 [8] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2016-01-02 20:10:00,426 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:10:00,690 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:12:01,818 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:12:02,032 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:19:26,080 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:19:26,251 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:20:27,062 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:20:27,293 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:22:25,867 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:22:26,190 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:23:56,983 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:23:57,237 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:25:19,987 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:25:20,134 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:25:35,222 [9] ERROR Actigraph.Forms.Reports.LoadData - System.IO.IOException: The process cannot access the file 'C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\bin\Debug\ActigraphDataFiles\Export_Actigraph_dancing_mind30-12-201530-12-201502-01-2016.xlsx' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.File.InternalDelete(String path, Boolean checkHost)
+   at System.IO.File.Delete(String path)
+   at Actigraph.Parser.DirectoryStructure.MoveProcessedFile(String processedFile) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\DirectoryStructure.cs:line 94
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 131
+2016-01-02 20:25:45,195 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2016-01-02 20:26:36,451 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:26:36,639 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:27:05,808 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:27:05,986 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:30:03,374 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:30:03,742 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:31:00,337 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:31:00,604 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:32:26,498 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:32:26,660 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:36:06,162 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:36:06,341 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:37:46,386 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:37:46,561 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:38:00,310 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2016-01-02 20:39:18,352 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:39:18,544 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:44:38,791 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:44:39,112 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:45:28,623 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:45:28,820 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:46:11,045 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2016-01-02 20:46:42,446 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:46:42,574 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:47:41,743 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2016-01-02 20:49:15,710 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:49:15,828 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:50:26,606 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:50:26,711 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:50:26,849 [9] ERROR Actigraph.Forms.Reports.LoadData - System.ArgumentOutOfRangeException: InvalidArgument=Value of '0' is not valid for 'index'.
+Parameter name: index
+   at System.Windows.Forms.ListView.ColumnHeaderCollection.get_Item(Int32 index)
+   at Actigraph.Forms.Reports.LoadData.CreateList() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 75
+   at Actigraph.Forms.Reports.LoadData.LoadData_Load(Object sender, EventArgs e) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 47
+2016-01-02 20:50:32,756 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2016-01-02 20:54:35,184 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:54:35,358 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:54:38,934 [8] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2016-01-02 20:55:00,133 [10] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:55:00,282 [10] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:55:09,166 [10] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2016-01-02 20:55:22,353 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:55:22,485 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:55:24,554 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2016-01-02 20:55:29,373 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:55:29,536 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:55:56,322 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2016-01-02 20:57:01,586 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:57:01,757 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:57:01,833 [9] ERROR Actigraph.Forms.Reports.LoadData - System.ArgumentOutOfRangeException: InvalidArgument=Value of '0' is not valid for 'index'.
+Parameter name: index
+   at System.Windows.Forms.ListView.ColumnHeaderCollection.get_Item(Int32 index)
+   at Actigraph.Forms.Reports.LoadData.CreateList() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 79
+   at Actigraph.Forms.Reports.LoadData.LoadData_Load(Object sender, EventArgs e) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 51
+2016-01-02 20:58:38,971 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:58:39,100 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 20:58:45,009 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2016-01-02 20:58:57,131 [11] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 20:58:57,244 [11] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 21:04:29,110 [11] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2016-01-02 21:26:32,824 [9] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 21:26:33,390 [9] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.
+2016-01-02 21:27:33,767 [9] ERROR Actigraph.Forms.Reports.LoadData - System.IO.IOException: The process cannot access the file 'C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\bin\Debug\ActigraphDataFiles\Export_Actigraph_dancing_mind30-12-201530-12-201530-12-201531-12-2015.xlsx' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.File.InternalDelete(String path, Boolean checkHost)
+   at System.IO.File.Delete(String path)
+   at Actigraph.Parser.DirectoryStructure.MoveProcessedFile(String processedFile) in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Parser\DirectoryStructure.cs:line 94
+   at Actigraph.Forms.Reports.LoadData.GenerateReports() in C:\Users\K.Vineel\Documents\Visual Studio 2015\Projects\Actigraph.uws\Actigraph.Forms.Reports\Form1.cs:line 146
+2016-01-02 21:27:37,003 [9] INFO Actigraph.Forms.Reports.Program - Reports Ended!!!
+2016-01-02 21:32:18,367 [8] INFO Actigraph.Forms.Reports.Program - Reports Started!!!
+2016-01-02 21:32:18,488 [8] INFO Actigraph.Forms.Reports.LoadData - Folder structure created.

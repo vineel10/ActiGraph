@@ -23,11 +23,15 @@ namespace Actigraph.Forms.Reports
                 this.BackColor = Color.FromArgb(0, 113, 113);
                 button1.BackColor= Color.FromArgb(0, 113, 113);
                 btnCancel.BackColor= Color.FromArgb(0, 113, 113);
+                button2.BackColor = Color.FromArgb(0, 113, 113);
                 lbldateTime.Text = DateTime.Now.ToString("dd-MMM-yyyy hh:mm:ss tt");
                 txtThresholdCutoff.Text = "600";
                 button1.TabStop = false;
                 button1.FlatStyle = FlatStyle.Flat;
                 button1.FlatAppearance.BorderSize = 0;
+                button2.TabStop = false;
+                button2.FlatStyle = FlatStyle.Flat;
+                button2.FlatAppearance.BorderSize = 0;
                 btnCancel.TabStop = false;
                 btnCancel.FlatStyle = FlatStyle.Flat;
                 btnCancel.FlatAppearance.BorderSize = 0;
@@ -65,13 +69,17 @@ namespace Actigraph.Forms.Reports
             listView1.Sort();
             //listView1.CheckBoxes = true;
             //Add column header
-            listView1.Columns.Add("FileName", 300);
+            
             // listView1.Items.AddRange(stagedFiles);
             foreach (var itm in stagedFiles.Select(item => new ListViewItem(item)))
             {
                 listView1.Items.Add(Path.GetFileName(itm.Text));
             }
-            listView1.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
+            if (stagedFiles.Length > 0)
+            {
+                listView1.Columns.Add("File Name", 300);
+                listView1.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -135,14 +143,7 @@ namespace Actigraph.Forms.Reports
                         Application.DoEvents();
                         i++;
                     }
-                    DirectoryStructure.MoveProcessedFile(listView1.SelectedItems[0].SubItems[0].Text);
-                    processedBar.Visible = false;
-                    lblProcessing.Visible = false;
-                    CreateList();
-                    button1.Enabled = true;
-                    txtThresholdCutoff.Enabled = true;
-                    MessageBox.Show("Reports generated Successfuuly!!!. Please press Ok to open reports folder.");
-                    Process.Start(DirectoryStructure.ActigraphReportsFolderName);
+                    
                 }
                 else
                 {
@@ -163,8 +164,17 @@ namespace Actigraph.Forms.Reports
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             button1.Enabled = false;
             GenerateReports();
+            DirectoryStructure.MoveProcessedFile(listView1.SelectedItems[0].SubItems[0].Text);
+            processedBar.Visible = false;
+            lblProcessing.Visible = false;
+            CreateList();
+            button1.Enabled = true;
+            txtThresholdCutoff.Enabled = true;
+            MessageBox.Show("Reports generated Successfuuly!!!. Please press Ok to open reports folder.");
+            Process.Start(DirectoryStructure.ActigraphReportsFolderName);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -175,6 +185,11 @@ namespace Actigraph.Forms.Reports
                 Application.ExitThread();
                 Application.Exit();
             }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            CreateList();
         }
     }
 }

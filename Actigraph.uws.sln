@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actigraph.Forms.Reports", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actigraph.Parser", "Actigraph.Parser\Actigraph.Parser.csproj", "{9AA78E63-A856-4954-BB66-95B5652EE07F}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupDeployment", "SetupDeployment\SetupDeployment.vdproj", "{96F0A9C3-C0B9-4AB6-94BB-030DB39234B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,8 @@ Global
 		{9AA78E63-A856-4954-BB66-95B5652EE07F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AA78E63-A856-4954-BB66-95B5652EE07F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AA78E63-A856-4954-BB66-95B5652EE07F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96F0A9C3-C0B9-4AB6-94BB-030DB39234B7}.Debug|Any CPU.ActiveCfg = Debug
+		{96F0A9C3-C0B9-4AB6-94BB-030DB39234B7}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

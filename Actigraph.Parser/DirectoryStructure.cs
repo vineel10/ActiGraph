@@ -8,6 +8,7 @@ namespace Actigraph.Parser
         public static string ActigraphDataFilesFolderName=string.Empty;
         public static string ActigraphDataFilesProcessedFolderName = string.Empty;
         public static string ActigraphReportsFolderName = string.Empty;
+        public static int i = 0;
 
         static DirectoryStructure()
         {
@@ -89,9 +90,22 @@ namespace Actigraph.Parser
 
         public static void MoveProcessedFile(string processedFile)
         {
+            
+            string fileName = processedFile;
+            try
+            {
             string absolutePath = Path.Combine(DirectoryStructure.ActigraphDataFilesFolderName, processedFile);
             File.Copy(absolutePath, Path.Combine(ActigraphDataFilesProcessedFolderName,Path.GetFileNameWithoutExtension(processedFile) + DateTime.Now.ToShortDateString() + Path.GetExtension(processedFile)),true);
             File.Delete(absolutePath);
+            }
+            catch (Exception exp)
+            {
+                if (i < 10)
+                {
+                    MoveProcessedFile(fileName);
+                    i++;
+                }
+            }
         }
     }
 }

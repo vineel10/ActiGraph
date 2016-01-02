@@ -18,12 +18,13 @@ namespace Actigraph.Forms.Reports
         {
             try
             {
+                var color = Color.FromArgb(32,178,170);
                 InitializeComponent();
                 this.Text = "Load Data";
-                this.BackColor = Color.FromArgb(0, 113, 113);
-                button1.BackColor= Color.FromArgb(0, 113, 113);
-                btnCancel.BackColor= Color.FromArgb(0, 113, 113);
-                button2.BackColor = Color.FromArgb(0, 113, 113);
+                this.BackColor = color;
+                button1.BackColor= color;
+                btnCancel.BackColor= color;
+                button2.BackColor = color;
                 lbldateTime.Text = DateTime.Now.ToString("dd-MMM-yyyy hh:mm:ss tt");
                 txtThresholdCutoff.Text = "600";
                 button1.TabStop = false;

@@ -17,11 +17,17 @@ namespace Actigraph.Parser.Generate_DocFiles
 {
     public class CreateDocFiles
     {
+
         public string fileExtension;
         private List<TableData> tableData1 = new List<TableData>();
         private List<TableData> tableData2 = new List<TableData>();
         private SummaryTableData[] tableData3 = null;
         private SubjectValidAverages subjectValidAverages;
+        private long ThresholdCutOffValid = 0L;
+        public CreateDocFiles(long thresholdCutOff)
+        {
+            ThresholdCutOffValid = thresholdCutOff;
+        }
         public void CreateReports(SubjectRecords subjectRecords)
         {
             try
@@ -47,11 +53,11 @@ namespace Actigraph.Parser.Generate_DocFiles
                     Date = rec.Date.ToShortDateString(),
                     Day_of_Week = rec.DayofWeek,
                     Wear_Time = Math.Round(rec.Time, 2),
-                    Movements_Per_Minute = Math.Round(rec.VectorMagnitudeCpm),
+                    Movements_Per_Minute = Math.Round(rec.VectorMagnitudeCpm,2),
                     Steps = rec.StepsCount,
-                    Sedentary = Math.Round(rec.Sedentary),
-                    Light = Math.Round(rec.Light),
-                    LifeStyle = Math.Round(rec.Lifestyle),
+                    Sedentary = Math.Round(rec.Sedentary,2),
+                    Light = Math.Round(rec.Light,2),
+                    LifeStyle = Math.Round(rec.Lifestyle,2),
                     Moderate = Math.Round(rec.Moderate, 2)
                 }).OrderBy(p => p.Date).ToArray();
         }
@@ -103,7 +109,7 @@ namespace Actigraph.Parser.Generate_DocFiles
                 Average_Wear_Time_All_Days = Math.Round(avgAllDaysWearTime, 2),
                 Average_Wear_Time_Valid_Days = Math.Round(avgValidaysWearTime, 2),
                 Average_Movements_Valid_Days = Math.Round(avgMovements, 2),
-                Average_Steps_Valid_Days = Math.Round(avgSteps)
+                Average_Steps_Valid_Days = Math.Round(avgSteps,2)
             };
 
             foreach (var item in (data.GetType().GetProperties()))
@@ -430,7 +436,7 @@ namespace Actigraph.Parser.Generate_DocFiles
                             case 3:
                                 cell.Range.Text =
                                     tableData[row.Index - 2].Wear_Time.ToString(CultureInfo.InvariantCulture);
-                                if (tableData[row.Index - 2].Wear_Time < 600)
+                                if (tableData[row.Index - 2].Wear_Time < ThresholdCutOffValid)
                                 {
                                     Color c = Color.LightGray;
                                     var wdc = (WdColor)(c.R + 0x100 * c.G + 0x10000 * c.B);

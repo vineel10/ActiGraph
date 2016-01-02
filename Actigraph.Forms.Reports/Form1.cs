@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Actigraph.Parser;
 using Actigraph.Parser.Generate_DocFiles;
@@ -26,7 +20,11 @@ namespace Actigraph.Forms.Reports
             {
                 InitializeComponent();
                 this.Text = "Load Data";
+                this.BackColor = Color.FromArgb(0, 113, 113);
+                button1.BackColor= Color.FromArgb(0, 113, 113);
+                btnCancel.BackColor= Color.FromArgb(0, 113, 113);
                 lbldateTime.Text = DateTime.Now.ToString("dd-MMM-yyyy hh:mm:ss tt");
+                txtThresholdCutoff.Text = "600";
                 button1.TabStop = false;
                 button1.FlatStyle = FlatStyle.Flat;
                 button1.FlatAppearance.BorderSize = 0;
@@ -56,7 +54,6 @@ namespace Actigraph.Forms.Reports
 
         private void CreateList()
         {
-
             var stagedFiles = DirectoryStructure.GetStagedFiles();
             lblStagedFiles.Text = string.Format("Currently you have {0} files to process.",
                 stagedFiles.Count());
@@ -74,6 +71,7 @@ namespace Actigraph.Forms.Reports
             {
                 listView1.Items.Add(Path.GetFileName(itm.Text));
             }
+            listView1.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -96,15 +94,23 @@ namespace Actigraph.Forms.Reports
 
         private void GenerateReports()
         {
+            long ThresholdCutoff = 0L;
             try
             {
                 if (listView1.SelectedItems.Count < 1)
                 {
                     MessageBox.Show("Please select atleast 1 file to process.");
+                    button1.Enabled = true;
                     return;
                 }
+                if (!long.TryParse(txtThresholdCutoff.Text, out ThresholdCutoff))
+                {
+                    MessageBox.Show("Enter valid CutOff");
+                    return;
+                }
+                txtThresholdCutoff.Enabled = false;
                 //MessageBox.Show(listView1.SelectedItems[0].SubItems[0].Text);
-                XlFileProcessor processor = new XlFileProcessor();
+                XlFileProcessor processor = new XlFileProcessor(ThresholdCutoff);
                 var parsedSubjectsData = processor.LoadFile(listView1.SelectedItems[0].SubItems[0].Text);
                 if (parsedSubjectsData != null)
                 {
@@ -120,32 +126,35 @@ namespace Actigraph.Forms.Reports
                     foreach (var item in subjectRecordses)
                     {
                         //CreateDocFiles files = new CreateDocFiles();
-                        CreatePdfReports files = new CreatePdfReports();
-                        files.fileExtension = ".PDF";
+                        CreatePdfReports files = new CreatePdfReports(ThresholdCutoff);
+                        files.fileExtension = ".pdf";
                         files.CreateReports(item);
                         files = null;
                         processedBar.Value = i;
                         lblProcessing.Text = "Processing " + i + " of " + processedBar.Maximum;
                         Application.DoEvents();
                         i++;
-
                     }
                     DirectoryStructure.MoveProcessedFile(listView1.SelectedItems[0].SubItems[0].Text);
                     processedBar.Visible = false;
                     lblProcessing.Visible = false;
                     CreateList();
                     button1.Enabled = true;
+                    txtThresholdCutoff.Enabled = true;
                     MessageBox.Show("Reports generated Successfuuly!!!. Please press Ok to open reports folder.");
                     Process.Start(DirectoryStructure.ActigraphReportsFolderName);
                 }
                 else
                 {
                     MessageBox.Show("Invalid data in selected file");
+                    button1.Enabled = true;
+                    txtThresholdCutoff.Enabled = true;
                 }
             }
             catch (Exception exp)
             {
                 button1.Enabled = true;
+                txtThresholdCutoff.Enabled = true;
                 MessageBox.Show(exp.Message);
                 log.Error(exp);
             }
@@ -156,12 +165,10 @@ namespace Actigraph.Forms.Reports
         {
             button1.Enabled = false;
             GenerateReports();
-            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
             if (MessageBox.Show("Exit application?", "Close Application",
                 MessageBoxButtons.OKCancel) != DialogResult.Cancel)
             {

@@ -10,7 +10,12 @@ using System.IO;
 namespace Actigraph.Parser
 {
    public class XlFileProcessor
-    {
+   {
+       private long ThresholdCutOffValid = 0L;
+       public XlFileProcessor(long thresholdCutOff)
+       {
+           ThresholdCutOffValid = thresholdCutOff;
+       }
        public IEnumerable<SubjectRecords> LoadFile(string filePath)
        {
            try
@@ -48,7 +53,9 @@ namespace Actigraph.Parser
                        SedentaryBouts = Convert.ToInt64(dRow["Sedentary Bouts"]),
                        StepsCount = Convert.ToInt64(dRow["Steps Counts"]),
                        Time = Convert.ToDouble(dRow["Time"]),
-                       VectorMagnitudeCpm = Convert.ToDouble(dRow["Vector Magnitude CPM"])
+                       VectorMagnitudeCpm = Convert.ToDouble(dRow["Vector Magnitude CPM"]),
+                       Moderate10 = Convert.ToDouble(dRow["Total Time in Freedson (1998) Bouts"])
+
                    }).OrderBy(c => c.ID);
 
                 var distinctSubjectId = GetDistinctSubjectId(detailSubjectRecords);
@@ -125,7 +132,7 @@ namespace Actigraph.Parser
 
        private IEnumerable<SubjectData> GetSubjectValidRecords(IEnumerable<SubjectData> subjectData)
        {
-            return subjectData.Where(p => p.Time>=600);
+            return subjectData.Where(p => p.Time>= ThresholdCutOffValid);
         }
 
        private SubjectValidAverages GetValidDaysAverages(IEnumerable<SubjectData> validSubjectRecords,string subjectId)
@@ -138,6 +145,7 @@ namespace Actigraph.Parser
             double avgLifestyle = 0d;
             double avgModerate = 0d;
             double avgTime = 0d;
+               double avgModerate10 = 0d;
             long validDays = 0;
                double movementsPerMinute = 0d;
                double steps=0d;
@@ -152,21 +160,20 @@ namespace Actigraph.Parser
                 avgLight += rec.Light;
                 avgModerate += rec.Moderate + rec.Vigorous + rec.VeryVigorous;
                 avgTime += rec.Time;
-                
+                avgModerate10 += rec.Moderate10;
 
             }
 
            return new SubjectValidAverages()
            {
                Id = subjectId,
-               AvgLifestyle = Math.Round(avgLifestyle/validDays),
+               AvgLifestyle = Math.Round(avgLifestyle/validDays,2),
                AvgLight = Math.Round(avgLight /validDays, 2),
                AvgModerate = Math.Round(avgModerate /validDays, 2),
                AvgSedentary = Math.Round(avgSedentary /validDays, 2),
                AvgTime = Math.Round(avgTime /validDays, 2),
                ValidDays = validDays,
-               
-               
+               AvgModerate10 = Math.Round(avgModerate10/validDays,2)
 
            };
             }

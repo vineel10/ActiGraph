@@ -28,6 +28,7 @@ namespace Actigraph.Parser
         public double Time { get; set; }
         public long FreedsonBouts{get; set; }
         public long SedentaryBouts { get; set; }
+        public double Moderate10 { get; set; }
 
     }
 
@@ -40,6 +41,7 @@ namespace Actigraph.Parser
         public double AvgModerate { get; set; }
         public double AvgTime { get; set; }
         public long ValidDays { get; set; }
+        public double AvgModerate10 { get; set; }
 
     }
 
@@ -70,6 +72,7 @@ namespace Actigraph.Parser
         public double Movements_Per_Minute { get; set; }
         public long Steps { get; set; }
         public double Wear_Time { get; set; }
+        public double Moderate10 { get; set; }
        
     }
 

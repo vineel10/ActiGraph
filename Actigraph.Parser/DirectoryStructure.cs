@@ -31,16 +31,16 @@ namespace Actigraph.Parser
             try
             {
 
-             ActigraphDataFilesFolderName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ActigraphDataFiles");
+            // ActigraphDataFilesFolderName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ActigraphDataFiles");
 
             if (!Directory.Exists(ActigraphDataFilesFolderName))
                  Directory.CreateDirectory(ActigraphDataFilesFolderName);
 
-            ActigraphDataFilesProcessedFolderName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ActigraphDataFilesProcessed");
+            //ActigraphDataFilesProcessedFolderName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ActigraphDataFilesProcessed");
             if (!Directory.Exists(ActigraphDataFilesProcessedFolderName))
                 Directory.CreateDirectory(ActigraphDataFilesProcessedFolderName);
 
-            ActigraphReportsFolderName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ActigraphReports");
+            //ActigraphReportsFolderName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ActigraphReports");
             if (!Directory.Exists(ActigraphReportsFolderName))
                 Directory.CreateDirectory(ActigraphReportsFolderName);
 
@@ -73,7 +73,7 @@ namespace Actigraph.Parser
             try
             {
            
-            var currentFolderName = Path.Combine(ActigraphReportsFolderName, folderName + "-" + DateTime.Now.ToShortDateString());
+            var currentFolderName = Path.Combine(ActigraphReportsFolderName,DateTime.Now.ToShortDateString(), folderName + "-" + DateTime.Now.ToShortDateString());
             if (!Directory.Exists(currentFolderName))
             {
                 Directory.CreateDirectory(currentFolderName);

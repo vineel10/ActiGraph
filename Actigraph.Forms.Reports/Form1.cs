@@ -18,28 +18,44 @@ namespace Actigraph.Forms.Reports
         {
             try
             {
-                var color = Color.FromArgb(32,178,170);
+                var color = Color.FromArgb(4, 19, 34);
                 InitializeComponent();
-                this.Text = "Load Data";
-                this.BackColor = color;
-                button1.BackColor= color;
-                btnCancel.BackColor= color;
-                button2.BackColor = color;
+                Text = "Load Data";
+                BackColor = color;
+                panel1.BackColor = color;
+                lblStagedFiles.ForeColor = Color.White;
+                lblProcessing.ForeColor = Color.White;
+                listView1.BackColor = color;
+                listView1.ForeColor = Color.White;
+                listView1.Scrollable = false;
+                listView1.BorderStyle = BorderStyle.FixedSingle;
+                listView1.HeaderStyle = ColumnHeaderStyle.None;
+                listView1.MultiSelect = false;
+
+                label2.ForeColor = Color.White;
                 lbldateTime.Text = DateTime.Now.ToString("dd-MMM-yyyy hh:mm:ss tt");
                 txtThresholdCutoff.Text = "600";
-                button1.TabStop = false;
-                button1.FlatStyle = FlatStyle.Flat;
-                button1.FlatAppearance.BorderSize = 0;
-                button2.TabStop = false;
-                button2.FlatStyle = FlatStyle.Flat;
-                button2.FlatAppearance.BorderSize = 0;
-                btnCancel.TabStop = false;
-                btnCancel.FlatStyle = FlatStyle.Flat;
-                btnCancel.FlatAppearance.BorderSize = 0;
+                ChangeButtons();
             }
             catch (Exception exp)
             {
                 log.Error(exp);
+            }
+        }
+
+        private void ChangeButtons()
+        {
+            var color = Color.FromArgb(4, 19, 34);
+            foreach (var control in this.panel1.Controls)
+            {
+                if (typeof (Button).FullName == control.GetType().FullName)
+                {
+                    ((Button) control).BackColor = color;
+                    ((Button) control).TabStop = false;
+                    ((Button) control).FlatStyle = FlatStyle.Flat;
+                    ((Button) control).FlatAppearance.BorderSize = 1;
+                    ((Button) control).FlatAppearance.BorderColor = Color.White;
+                }
             }
         }
 
@@ -70,7 +86,7 @@ namespace Actigraph.Forms.Reports
             listView1.Sort();
             //listView1.CheckBoxes = true;
             //Add column header
-            
+
             // listView1.Items.AddRange(stagedFiles);
             foreach (var itm in stagedFiles.Select(item => new ListViewItem(item)))
             {
@@ -101,7 +117,7 @@ namespace Actigraph.Forms.Reports
         }
 
 
-        private void GenerateReports()
+        private bool GenerateReports()
         {
             long ThresholdCutoff = 0L;
             try
@@ -110,12 +126,12 @@ namespace Actigraph.Forms.Reports
                 {
                     MessageBox.Show("Please select atleast 1 file to process.");
                     button1.Enabled = true;
-                    return;
+                    return false;
                 }
                 if (!long.TryParse(txtThresholdCutoff.Text, out ThresholdCutoff))
                 {
                     MessageBox.Show("Enter valid CutOff");
-                    return;
+                    return false;
                 }
                 txtThresholdCutoff.Enabled = false;
                 //MessageBox.Show(listView1.SelectedItems[0].SubItems[0].Text);
@@ -144,13 +160,13 @@ namespace Actigraph.Forms.Reports
                         Application.DoEvents();
                         i++;
                     }
-                    
                 }
                 else
                 {
                     MessageBox.Show("Invalid data in selected file");
                     button1.Enabled = true;
                     txtThresholdCutoff.Enabled = true;
+                    return false;
                 }
             }
             catch (Exception exp)
@@ -160,22 +176,25 @@ namespace Actigraph.Forms.Reports
                 MessageBox.Show(exp.Message);
                 log.Error(exp);
             }
+            return true;
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             button1.Enabled = false;
-            GenerateReports();
-            DirectoryStructure.MoveProcessedFile(listView1.SelectedItems[0].SubItems[0].Text);
-            processedBar.Visible = false;
-            lblProcessing.Visible = false;
-            CreateList();
-            button1.Enabled = true;
-            txtThresholdCutoff.Enabled = true;
-            MessageBox.Show("Reports generated Successfuuly!!!. Please press Ok to open reports folder.");
-            Process.Start(DirectoryStructure.ActigraphReportsFolderName);
+            if (GenerateReports())
+            {
+                DirectoryStructure.MoveProcessedFile(listView1.SelectedItems[0].SubItems[0].Text);
+                processedBar.Visible = false;
+                lblProcessing.Visible = false;
+                CreateList();
+                button1.Enabled = true;
+                txtThresholdCutoff.Enabled = true;
+                MessageBox.Show("Reports generated Successfuuly!!!. Please press Ok to open reports folder.");
+                Process.Start(Path.Combine(DirectoryStructure.ActigraphReportsFolderName,
+                    DateTime.Now.ToShortDateString()));
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -191,6 +210,38 @@ namespace Actigraph.Forms.Reports
         private void button2_Click_1(object sender, EventArgs e)
         {
             CreateList();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            openFileDialog1.InitialDirectory = @"C:\";
+            openFileDialog1.Title = "Browse Excel Files";
+
+            openFileDialog1.CheckFileExists = true;
+            openFileDialog1.CheckPathExists = true;
+
+            openFileDialog1.DefaultExt = "xlsx";
+            openFileDialog1.Filter = "Excel Files|*.xls;*.xlsx;";
+            openFileDialog1.RestoreDirectory = true;
+
+            openFileDialog1.Multiselect = true;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                textBox2.Text = openFileDialog1.FileNames.Aggregate((current, next) => current + ", " + next);
+                foreach (var file in openFileDialog1.FileNames)
+                {
+                    var fileName = Path.GetFileName(file);
+                    File.Copy(file, Path.Combine(DirectoryStructure.ActigraphDataFilesFolderName, fileName), true);
+                }
+                CreateList();
+            }
         }
     }
 }

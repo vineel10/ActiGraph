@@ -81,7 +81,7 @@ namespace Actigraph.Parser.Generate_DocFiles
             {
                 Height = 80,
                 Width = 90,
-                X = 15,
+                X = 12,
                 Y = 5
             };
             chart1.ChartAreas.Add(chartArea);
@@ -122,8 +122,8 @@ namespace Actigraph.Parser.Generate_DocFiles
             dp = new DataPoint()
             {
                 YValues = new double[] { SubjectRecords.SubjectValidAverages.AvgLifestyle },
-                Color = Color.Green,
-                BorderColor = Color.Green,
+                Color = Color.LightGreen,
+                BorderColor = Color.LightGreen,
                 AxisLabel = "Life Style",
                 LabelForeColor = Color.Black,
             };
@@ -133,31 +133,30 @@ namespace Actigraph.Parser.Generate_DocFiles
                 dp = new DataPoint()
                 {
                     YValues = new double[] {SubjectRecords.SubjectValidAverages.AvgModerate10},
-                    Color = Color.DarkGreen,
+                    Color = Color.Green,
                     BackHatchStyle = ChartHatchStyle.Percent20,
                     BackSecondaryColor = Color.Black,
                     LabelForeColor = Color.Black,
                     AxisLabel = "Moderate-10",
-                    BorderColor = Color.DarkGreen
+                    BorderColor = Color.Green
                 };
                chart1.Series[0].Points.Add(dp);
             }
             
             dp = new DataPoint()
             {
-                Color = Color.DarkGreen,
-                YValues = new double[] { SubjectRecords.SubjectValidAverages.AvgModerate },
+                Color = Color.Green,
+                YValues = new double[] { chartType == SeriesChartType.Pie?SubjectRecords.SubjectValidAverages.AvgModerate - SubjectRecords.SubjectValidAverages.AvgModerate10: SubjectRecords.SubjectValidAverages.AvgModerate},
                 AxisLabel = "Moderate",
                 LabelForeColor = Color.Black,
-                BorderColor = Color.DarkGreen
+                BorderColor = Color.Green
             };
             chart1.Series[0].Points.Add(dp);
-            chart1.Series[0]["PieLabelStyle"] = "Outside";
+            chart1.Series[0].IsValueShownAsLabel = true;
             if (chartType == SeriesChartType.Pie)
             {
-                chart1.Series[0].IsValueShownAsLabel = true;
+                chart1.Series[0]["PieLabelStyle"] = "Outside";
                 chart1.Legends.Add(new Legend("legend1"));
-                chart1.Legends[0].ItemColumnSeparator = LegendSeparatorStyle.Line;
                 chart1.Legends[0].Alignment = StringAlignment.Near;
                 chart1.Legends[0].Docking = Docking.Right;
                 chart1.Legends[0].Enabled = true;
@@ -251,11 +250,12 @@ namespace Actigraph.Parser.Generate_DocFiles
             para.Font.SetStyle("underline");
             para.Alignment = Element.ALIGN_LEFT;
             doc.Add(para);
-            doc.Add(CreateTable(tableData1, "Subject Details"));
             doc.Add(new Paragraph("\n"));
+            doc.Add(CreateTable(tableData1, "Subject Details"));
             para = new Paragraph($"Date Range: {tableData2.FirstOrDefault(t=>t.Name == "Date Range").Value}");
             para.Alignment = Element.ALIGN_LEFT;
             doc.Add(para);
+            doc.Add(new Paragraph("\n"));
             //Start Table-2
             //doc.Add(CreateTable(tableData2, "Subject Summary Details"));
             //Insert Graph
@@ -265,7 +265,6 @@ namespace Actigraph.Parser.Generate_DocFiles
             para.Alignment = Element.ALIGN_LEFT;
             para.PaddingTop = 50f;
             doc.Add(para);
-            doc.Add(new Paragraph("\n"));
             Image barChart = Image.GetInstance(CreateGraph(SeriesChartType.StackedBar).ToArray());
             barChart.ScaleToFit(400f,400f);
             barChart.Alignment = iTextSharp.text.Image.ALIGN_LEFT;

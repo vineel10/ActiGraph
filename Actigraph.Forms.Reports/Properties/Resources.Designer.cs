@@ -61,6 +61,33 @@ namespace Actigraph.Forms.Reports.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reports generated Successfuuly!!!. Please press Ok to open reports folder..
+        /// </summary>
+        internal static string LoadData_button1_Click_Reports_generated_Successfuuly {
+            get {
+                return ResourceManager.GetString("LoadData_button1_Click_Reports_generated_Successfuuly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close Application.
+        /// </summary>
+        internal static string LoadData_button2_Click_Close_Application {
+            get {
+                return ResourceManager.GetString("LoadData_button2_Click_Close_Application", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exit application?.
+        /// </summary>
+        internal static string LoadData_button2_Click_Exit_application_ {
+            get {
+                return ResourceManager.GetString("LoadData_button2_Click_Exit_application_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap UWSlogo {

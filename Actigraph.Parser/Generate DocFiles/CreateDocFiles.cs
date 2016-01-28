@@ -52,13 +52,13 @@ namespace Actigraph.Parser.Generate_DocFiles
                 {
                     Date = rec.Date.ToShortDateString(),
                     Day_of_Week = rec.DayofWeek,
-                    Wear_Time = Math.Round(rec.Time, 2),
-                    Movements_Per_Minute = Math.Round(rec.VectorMagnitudeCpm,2),
+                    Wear_Time = Math.Round(rec.Time),
+                    Movements_Per_Minute = Math.Round(rec.VectorMagnitudeCpm),
                     Steps = rec.StepsCount,
-                    Sedentary = Math.Round(rec.Sedentary,2),
-                    Light = Math.Round(rec.Light,2),
-                    LifeStyle = Math.Round(rec.Lifestyle,2),
-                    Moderate = Math.Round(rec.Moderate, 2)
+                    Sedentary = Math.Round(rec.Sedentary),
+                    Light = Math.Round(rec.Light),
+                    LifeStyle = Math.Round(rec.Lifestyle),
+                    Moderate = Math.Round(rec.Moderate)
                 }).OrderBy(p => p.Date).ToArray();
         }
 
@@ -106,10 +106,10 @@ namespace Actigraph.Parser.Generate_DocFiles
                 Date_Range = dateRange,
                 Valid_Days = validDays,
                 Invalid_Days = invalidDays,
-                Average_Wear_Time_All_Days = Math.Round(avgAllDaysWearTime, 2),
-                Average_Wear_Time_Valid_Days = Math.Round(avgValidaysWearTime, 2),
-                Average_Movements_Valid_Days = Math.Round(avgMovements, 2),
-                Average_Steps_Valid_Days = Math.Round(avgSteps,2)
+                Average_Wear_Time_All_Days = Math.Round(avgAllDaysWearTime),
+                Average_Wear_Time_Valid_Days = Math.Round(avgValidaysWearTime),
+                Average_Movements_Valid_Days = Math.Round(avgMovements),
+                Average_Steps_Valid_Days = Math.Round(avgSteps)
             };
 
             foreach (var item in (data.GetType().GetProperties()))

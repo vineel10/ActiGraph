@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 
 namespace Actigraph.Parser
 {
@@ -58,8 +59,12 @@ namespace Actigraph.Parser
             try
             {
 
-                var stagedFiles = Directory.GetFiles(ActigraphDataFilesFolderName);
-                return stagedFiles;
+                var stagedFiles = Directory.GetFiles(ActigraphDataFilesFolderName).Where(f=>
+                {
+                    var extension = Path.GetExtension(f);
+                    return extension != null && extension.ToUpperInvariant().Contains("XLS");
+                });
+                return stagedFiles.ToArray();
             }
             catch (Exception exp)
             {

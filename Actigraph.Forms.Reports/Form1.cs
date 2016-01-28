@@ -4,6 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Actigraph.Forms.Reports.Properties;
 using Actigraph.Parser;
 using Actigraph.Parser.Generate_DocFiles;
 
@@ -76,8 +77,7 @@ namespace Actigraph.Forms.Reports
         private void CreateList()
         {
             var stagedFiles = DirectoryStructure.GetStagedFiles();
-            lblStagedFiles.Text = string.Format("Currently you have {0} files to process.",
-                stagedFiles.Count());
+            lblStagedFiles.Text = $"Currently you have {stagedFiles.Count()} files to process.";
             listView1.Columns.Clear();
             listView1.Items.Clear();
             listView1.View = View.Details;
@@ -124,13 +124,13 @@ namespace Actigraph.Forms.Reports
             {
                 if (listView1.SelectedItems.Count < 1)
                 {
-                    MessageBox.Show("Please select atleast 1 file to process.");
+                    MessageBox.Show(@"Please select a file to process.");
                     button1.Enabled = true;
                     return false;
                 }
                 if (!long.TryParse(txtThresholdCutoff.Text, out ThresholdCutoff))
                 {
-                    MessageBox.Show("Enter valid CutOff");
+                    MessageBox.Show(@"Enter valid CutOff");
                     return false;
                 }
                 txtThresholdCutoff.Enabled = false;
@@ -147,23 +147,23 @@ namespace Actigraph.Forms.Reports
                     processedBar.TabIndex = 0;
                     processedBar.Visible = true;
                     lblProcessing.Visible = true;
-                    lblProcessing.Text = "Processing 1" + " of " + processedBar.Maximum;
+                    lblProcessing.Text = $"Processing {i} of {processedBar.Maximum}";
                     foreach (var item in subjectRecordses)
                     {
                         //CreateDocFiles files = new CreateDocFiles();
-                        CreatePdfReports files = new CreatePdfReports(ThresholdCutoff);
-                        files.fileExtension = ".pdf";
+                        CreatePdfReports files = new CreatePdfReports(ThresholdCutoff)
+                        { fileExtension = @".pdf"};
                         files.CreateReports(item);
                         files = null;
                         processedBar.Value = i;
-                        lblProcessing.Text = "Processing " + i + " of " + processedBar.Maximum;
+                        lblProcessing.Text = $"Processing {i} of {processedBar.Maximum}";
                         Application.DoEvents();
                         i++;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Invalid data in selected file");
+                    MessageBox.Show(@"Invalid data in selected file");
                     button1.Enabled = true;
                     txtThresholdCutoff.Enabled = true;
                     return false;
@@ -171,10 +171,10 @@ namespace Actigraph.Forms.Reports
             }
             catch (Exception exp)
             {
+                log.Error(exp);
                 button1.Enabled = true;
                 txtThresholdCutoff.Enabled = true;
                 MessageBox.Show(exp.Message);
-                log.Error(exp);
             }
             return true;
         }
@@ -183,23 +183,22 @@ namespace Actigraph.Forms.Reports
         private void button1_Click(object sender, EventArgs e)
         {
             button1.Enabled = false;
-            if (GenerateReports())
-            {
-                DirectoryStructure.MoveProcessedFile(listView1.SelectedItems[0].SubItems[0].Text);
-                processedBar.Visible = false;
-                lblProcessing.Visible = false;
-                CreateList();
-                button1.Enabled = true;
-                txtThresholdCutoff.Enabled = true;
-                MessageBox.Show("Reports generated Successfuuly!!!. Please press Ok to open reports folder.");
-                Process.Start(Path.Combine(DirectoryStructure.ActigraphReportsFolderName,
-                    DateTime.Now.ToShortDateString()));
-            }
+            button1.ForeColor = Color.White;
+            if (!GenerateReports()) return;
+            DirectoryStructure.MoveProcessedFile(listView1.SelectedItems[0].SubItems[0].Text);
+            processedBar.Visible = false;
+            lblProcessing.Visible = false;
+            CreateList();
+            button1.Enabled = true;
+            txtThresholdCutoff.Enabled = true;
+            MessageBox.Show(Resources.LoadData_button1_Click_Reports_generated_Successfuuly);
+            Process.Start(Path.Combine(DirectoryStructure.ActigraphReportsFolderName,
+                DateTime.Now.ToShortDateString()));
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Exit application?", "Close Application",
+            if (MessageBox.Show(Resources.LoadData_button2_Click_Exit_application_, Resources.LoadData_button2_Click_Close_Application,
                 MessageBoxButtons.OKCancel) != DialogResult.Cancel)
             {
                 Application.ExitThread();
@@ -221,7 +220,7 @@ namespace Actigraph.Forms.Reports
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
             openFileDialog1.InitialDirectory = @"C:\";
-            openFileDialog1.Title = "Browse Excel Files";
+            openFileDialog1.Title = @"Browse Excel Files";
 
             openFileDialog1.CheckFileExists = true;
             openFileDialog1.CheckPathExists = true;
@@ -237,6 +236,8 @@ namespace Actigraph.Forms.Reports
                 textBox2.Text = openFileDialog1.FileNames.Aggregate((current, next) => current + ", " + next);
                 foreach (var file in openFileDialog1.FileNames)
                 {
+                    var extension = Path.GetExtension(file);
+                    if (extension == null || !extension.ToUpperInvariant().Contains("XLS")) continue;
                     var fileName = Path.GetFileName(file);
                     File.Copy(file, Path.Combine(DirectoryStructure.ActigraphDataFilesFolderName, fileName), true);
                 }

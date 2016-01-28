@@ -167,13 +167,13 @@ namespace Actigraph.Parser
            return new SubjectValidAverages()
            {
                Id = subjectId,
-               AvgLifestyle = Math.Round(avgLifestyle/validDays,2),
-               AvgLight = Math.Round(avgLight /validDays, 2),
-               AvgModerate = Math.Round(avgModerate /validDays, 2),
-               AvgSedentary = Math.Round(avgSedentary /validDays, 2),
-               AvgTime = Math.Round(avgTime /validDays, 2),
+               AvgLifestyle = Math.Round(avgLifestyle/validDays),
+               AvgLight = Math.Round(avgLight /validDays),
+               AvgModerate = Math.Round(avgModerate /validDays),
+               AvgSedentary = Math.Round(avgSedentary /validDays),
+               AvgTime = Math.Round(avgTime /validDays),
                ValidDays = validDays,
-               AvgModerate10 = Math.Round(avgModerate10/validDays,2)
+               AvgModerate10 = Math.Round(avgModerate10/validDays)
 
            };
             }

@@ -4,9 +4,6 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using iTextSharp;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using Font = iTextSharp.text.Font;
@@ -24,10 +21,12 @@ namespace Actigraph.Parser.Generate_DocFiles
         private SummaryTableData[] tableData3 = null;
         private SubjectRecords SubjectRecords;
         private long ThresholdCutOffValid = 0L;
+
         public CreatePdfReports(long thresholdCutOff)
         {
             ThresholdCutOffValid = thresholdCutOff;
         }
+
         public void CreateReports(SubjectRecords subjectRecords)
         {
             try
@@ -42,33 +41,32 @@ namespace Actigraph.Parser.Generate_DocFiles
             {
                 throw exp;
             }
-
         }
 
         private SummaryTableData[] GetTable3Data(SubjectRecords subjectRecords)
         {
             return (from rec in subjectRecords.SubjectData
-                    select new SummaryTableData()
-                    {
-                        Date = rec.Date.ToShortDateString(),
-                        Day_of_Week = rec.DayofWeek,
-                        Wear_Time = Math.Round(rec.Time),
-                        Movements_Per_Minute = Math.Round(rec.VectorMagnitudeCpm),
-                        Steps = rec.StepsCount,
-                        Sedentary = Math.Round(rec.Sedentary),
-                        Light = Math.Round(rec.Light),
-                        LifeStyle = Math.Round(rec.Lifestyle),
-                        Moderate = Math.Round(rec.Moderate),
-                        Moderate10 = Math.Round(rec.Moderate10),
-                    }).OrderBy(p => p.Date).ToArray();
+                select new SummaryTableData()
+                {
+                    Date = rec.Date.ToShortDateString(),
+                    Day_of_Week = rec.DayofWeek,
+                    Wear_Time = Math.Round(rec.Time),
+                    Movements_Per_Minute = Math.Round(rec.VectorMagnitudeCpm),
+                    Steps = rec.StepsCount,
+                    Sedentary = Math.Round(rec.Sedentary),
+                    Light = Math.Round(rec.Light),
+                    LifeStyle = Math.Round(rec.Lifestyle),
+                    Moderate = Math.Round(rec.Moderate),
+                    Moderate10 = Math.Round(rec.Moderate10),
+                }).OrderBy(p => p.Date).ToArray();
         }
 
         private MemoryStream CreateGraph(SeriesChartType chartType)
         {
             Chart chart1 = new Chart()
             {
-                Width = 800,
-                Height = 500
+                Width = chartType != SeriesChartType.Pie ? 250 : 330,
+                Height = chartType == SeriesChartType.Pie ? 280 : 220
             };
 
             ChartArea chartArea = new ChartArea("chartArea1");
@@ -77,23 +75,16 @@ namespace Actigraph.Parser.Generate_DocFiles
             chartArea.BackColor = Color.White;
 
             chartArea.AxisY.Interval = 75;
-            chartArea.InnerPlotPosition = new ElementPosition()
-            {
-                Height = 80,
-                Width = 90,
-                X = 12,
-                Y = 5
-            };
+
             chart1.ChartAreas.Add(chartArea);
             chart1.BackColor = Color.White;
             chart1.Series.Clear();
             chart1.BorderColor = Color.White;
             chartArea.BorderColor = Color.White;
-            if (chartType != SeriesChartType.Pie)
-            {
-                chart1.ChartAreas[0].Area3DStyle.Enable3D = true;
-                chart1.ChartAreas[0].Area3DStyle.LightStyle = LightStyle.None;
-            }
+
+            chart1.ChartAreas[0].Area3DStyle.Enable3D = true;
+            chart1.ChartAreas[0].Area3DStyle.LightStyle = LightStyle.Realistic;
+
             var series = new Series()
             {
                 Name = "Averages",
@@ -105,77 +96,96 @@ namespace Actigraph.Parser.Generate_DocFiles
             {
                 Color = Color.Salmon,
                 BorderColor = Color.Salmon,
-                AxisLabel = "Sedentary",
+                MarkerBorderWidth = 10,
+                AxisLabel = chartType != SeriesChartType.Pie ? String.Empty : "Sedentary",
                 LabelForeColor = Color.Black,
-                YValues = new double[] { SubjectRecords.SubjectValidAverages.AvgSedentary },
+                YValues = new double[] {SubjectRecords.SubjectValidAverages.AvgSedentary},
+                BorderWidth = 1
             };
+            dp.Font = new System.Drawing.Font(FontFamily.GenericSansSerif, 7);
             chart1.Series[0].Points.Add(dp);
             dp = new DataPoint()
             {
-                YValues = new double[] { SubjectRecords.SubjectValidAverages.AvgLight },
+                YValues = new double[] {SubjectRecords.SubjectValidAverages.AvgLight},
                 Color = Color.DodgerBlue,
                 BorderColor = Color.DodgerBlue,
-                AxisLabel = "Light",
-                LabelForeColor = Color.Black
+                AxisLabel = chartType != SeriesChartType.Pie ? String.Empty : "Light",
+                LabelForeColor = Color.Black,
+                BorderWidth = 1
             };
+            dp.Font = new System.Drawing.Font(FontFamily.GenericSansSerif, 7);
             chart1.Series[0].Points.Add(dp);
             dp = new DataPoint()
             {
-                YValues = new double[] { SubjectRecords.SubjectValidAverages.AvgLifestyle },
-                Color = Color.LightGreen,
-                BorderColor = Color.LightGreen,
-                AxisLabel = "Life Style",
+                YValues = new double[] {SubjectRecords.SubjectValidAverages.AvgLifestyle},
+                Color = Color.GreenYellow,
+                BorderColor = Color.GreenYellow,
+                AxisLabel = chartType != SeriesChartType.Pie ? String.Empty : "Life Style",
                 LabelForeColor = Color.Black,
+                BorderWidth = 1
             };
+            dp.Font = new System.Drawing.Font(FontFamily.GenericSansSerif, 7);
             chart1.Series[0].Points.Add(dp);
-            if (Math.Abs(SubjectRecords.SubjectValidAverages.AvgModerate10) > 0)
+            if (Math.Abs(SubjectRecords.SubjectValidAverages.AvgModerate10) > 0 && chartType == SeriesChartType.Pie)
             {
                 dp = new DataPoint()
                 {
                     YValues = new double[] {SubjectRecords.SubjectValidAverages.AvgModerate10},
                     Color = Color.Green,
-                    BackHatchStyle = ChartHatchStyle.Percent20,
-                    BackSecondaryColor = Color.Black,
                     LabelForeColor = Color.Black,
-                    AxisLabel = "Moderate-10",
-                    BorderColor = Color.Green
+                    AxisLabel = chartType != SeriesChartType.Pie ? String.Empty : "Moderate-10",
+                    BorderColor = Color.Black,
+                    BorderDashStyle = ChartDashStyle.Dot,
+                    BorderWidth = 1
                 };
-               chart1.Series[0].Points.Add(dp);
+                dp.Font = new System.Drawing.Font(FontFamily.GenericSansSerif, 7);
+                chart1.Series[0].Points.Add(dp);
             }
-            
+
             dp = new DataPoint()
             {
                 Color = Color.Green,
-                YValues = new double[] { chartType == SeriesChartType.Pie?SubjectRecords.SubjectValidAverages.AvgModerate - SubjectRecords.SubjectValidAverages.AvgModerate10: SubjectRecords.SubjectValidAverages.AvgModerate},
-                AxisLabel = "Moderate",
+                YValues =
+                    new double[]
+                    {
+                        chartType == SeriesChartType.Pie
+                            ? SubjectRecords.SubjectValidAverages.AvgModerate -
+                              SubjectRecords.SubjectValidAverages.AvgModerate10
+                            : SubjectRecords.SubjectValidAverages.AvgModerate
+                    },
+                AxisLabel = chartType != SeriesChartType.Pie ? String.Empty : "Moderate",
                 LabelForeColor = Color.Black,
-                BorderColor = Color.Green
+                BorderColor = Color.Green,
+                BorderWidth = 1
             };
+            dp.Font = new System.Drawing.Font(FontFamily.GenericSansSerif, 7);
+
             chart1.Series[0].Points.Add(dp);
             chart1.Series[0].IsValueShownAsLabel = true;
+
             if (chartType == SeriesChartType.Pie)
             {
-                chart1.Series[0]["PieLabelStyle"] = "Outside";
+                chart1.Series[0]["PieLabelStyle"] = "OutSide";
                 chart1.Legends.Add(new Legend("legend1"));
-                chart1.Legends[0].Alignment = StringAlignment.Near;
-                chart1.Legends[0].Docking = Docking.Right;
+                chart1.Legends[0].Alignment = StringAlignment.Far;
+                chart1.Legends[0].Docking = Docking.Bottom;
                 chart1.Legends[0].Enabled = true;
             }
             MemoryStream memoryStream = new MemoryStream();
-            chart1.SaveImage(memoryStream, ChartImageFormat.Bmp);
+            chart1.SaveImage(memoryStream, ChartImageFormat.Png);
             return memoryStream;
         }
+
         private void GetTable1Data(IEnumerable<SubjectData> subjectData)
         {
             var data = (from rec in subjectData
-                        select new
-                        {
-                            ID = rec.ID,
-                            Hospital = rec.Hospital,
-                            Cottage = rec.Cottage,
-                            Age = rec.Age,
-                            Gender = rec.Gender
-                        }).FirstOrDefault();
+                select new
+                {
+                    rec.ID,
+                    rec.Cottage,
+                    rec.Age,
+                    rec.Gender
+                }).FirstOrDefault();
 
             foreach (var item in (data.GetType().GetProperties()))
             {
@@ -211,7 +221,6 @@ namespace Actigraph.Parser.Generate_DocFiles
                 Average_Wear_Time_Valid_Days = Math.Round(avgValidaysWearTime),
                 Average_Movements_Valid_Days = Math.Round(avgMovements),
                 Average_Steps_Valid_Days = Math.Round(avgSteps),
-
             };
 
             foreach (var item in (data.GetType().GetProperties()))
@@ -243,6 +252,10 @@ namespace Actigraph.Parser.Generate_DocFiles
             para.Font.SetStyle("bold");
             para.Alignment = Element.ALIGN_RIGHT;
             doc.Add(para);
+            para = new Paragraph("Dear Mr." + SubjectRecords.SubjectData.FirstOrDefault().FamilyName + ",");
+            para.Font.SetStyle("bold");
+            para.Alignment = Element.ALIGN_LEFT;
+            doc.Add(para);
             //Table-1
             doc.Add(new Paragraph("\n"));
             para = new Paragraph("Subject Details");
@@ -252,7 +265,7 @@ namespace Actigraph.Parser.Generate_DocFiles
             doc.Add(para);
             doc.Add(new Paragraph("\n"));
             doc.Add(CreateTable(tableData1, "Subject Details"));
-            para = new Paragraph($"Date Range: {tableData2.FirstOrDefault(t=>t.Name == "Date Range").Value}");
+            para = new Paragraph($"Date Range: {tableData2.FirstOrDefault(t => t.Name == "Date Range").Value}");
             para.Alignment = Element.ALIGN_LEFT;
             doc.Add(para);
             doc.Add(new Paragraph("\n"));
@@ -265,26 +278,32 @@ namespace Actigraph.Parser.Generate_DocFiles
             para.Alignment = Element.ALIGN_LEFT;
             para.PaddingTop = 50f;
             doc.Add(para);
+            PdfPTable table = new PdfPTable(2);
+            table.PaddingTop = 50f;
+
+            table.TotalWidth = 580f;
+            table.LockedWidth = true;
+            table.HorizontalAlignment = 0;
+            float[] widths = {260, 320};
+            table.SetWidths(widths);
+            PdfPCell cell = new PdfPCell();
+            table.DefaultCell.Border = Rectangle.NO_BORDER;
             Image barChart = Image.GetInstance(CreateGraph(SeriesChartType.StackedBar).ToArray());
-            barChart.ScaleToFit(400f,400f);
+            //barChart.ScaleToFit(250f,220f);
             barChart.Alignment = iTextSharp.text.Image.ALIGN_LEFT;
-            doc.Add(barChart);
-            //Summary
-            doc.Add(new Paragraph("\n"));
-            para = new Paragraph("Pie Chart Showing Subject Averages");
-            para.Font.SetStyle("bold");
-            para.Font.SetStyle("underline");
-            para.Alignment = Element.ALIGN_LEFT;
-            para.PaddingTop = 50f;
-            doc.Add(para);
-            doc.Add(new Paragraph("\n"));
-            Image pieChart = Image.GetInstance(CreateGraph(SeriesChartType.Pie).ToArray());
-            pieChart.ScaleToFit(400f,250f);
-            pieChart.Alignment = iTextSharp.text.Image.ALIGN_LEFT;
-            doc.Add(pieChart);
-            //doc.Add(CreateSittingSummaryTable( "Subject Sitting Summary"));
-            //doc.Add(new Paragraph("\n"));
-            //doc.Add(new Paragraph("\n"));
+            cell = new PdfPCell(barChart);
+            cell.HorizontalAlignment = 0;
+            cell.Border = 0;
+            table.AddCell(cell);
+            cell = new PdfPCell();
+            Image PieChart = Image.GetInstance(CreateGraph(SeriesChartType.Pie).ToArray());
+            //PieChart.ScaleToFit(330f, 220f);
+            PieChart.Alignment = iTextSharp.text.Image.ALIGN_LEFT;
+            cell = new PdfPCell(PieChart);
+            cell.HorizontalAlignment = 0;
+            cell.Border = 0;
+            table.AddCell(cell);
+            doc.Add(table);
             doc.Add(new Paragraph("\n"));
             para = new Paragraph("Subject Summary Details (Weekly)");
             para.Font.SetStyle("bold");
@@ -301,24 +320,25 @@ namespace Actigraph.Parser.Generate_DocFiles
         {
             var subjectId = tableData1.Where(i => i.Name == "ID").ToArray()[0].Value;
             var folderName = DirectoryStructure.CreateSubjectFolder(subjectId);
-            string fileName = Path.Combine(folderName, subjectId + "-" + DateTime.Now.ToShortDateString() + fileExtension);
+            string fileName = Path.Combine(folderName,
+                subjectId + "-" + DateTime.Now.ToShortDateString() + fileExtension);
             if (File.Exists(fileName))
             {
                 fileName = Path.Combine(folderName,
-                        Guid.NewGuid() +
-                        Path.GetExtension(fileName.ToString()));
+                    Guid.NewGuid() +
+                    Path.GetExtension(fileName.ToString()));
             }
             return fileName;
         }
+
         private PdfPTable CreateTable(List<TableData> dataTable, string tableHeader)
         {
-
             var para = new Paragraph(tableHeader);
             para.Font.SetStyle("bold");
             para.Font.SetStyle("underline");
             para.Alignment = Element.ALIGN_LEFT;
             para.PaddingTop = 100f;
-            PdfPTable table = new PdfPTable(4);
+            PdfPTable table = new PdfPTable(dataTable.Count);
             table.PaddingTop = 100f;
 
             table.TotalWidth = 530f;
@@ -346,7 +366,6 @@ namespace Actigraph.Parser.Generate_DocFiles
 
         private PdfPTable CreateSittingSummaryTable(string tableHeader)
         {
-
             var para = new Paragraph(tableHeader);
             para.Font.SetStyle("bold");
             para.Font.SetStyle("underline");
@@ -358,7 +377,7 @@ namespace Actigraph.Parser.Generate_DocFiles
             table.TotalWidth = 530f;
             table.LockedWidth = true;
             table.HorizontalAlignment = 0;
-            float[] widths = new float[] { 150f, 150f };
+            float[] widths = new float[] {150f, 150f};
             table.SetWidths(widths);
             PdfPCell cell = new PdfPCell(para);
             cell.Colspan = 2;
@@ -372,7 +391,9 @@ namespace Actigraph.Parser.Generate_DocFiles
             cell.HorizontalAlignment = 0;
             cell.Border = 0;
             table.AddCell(cell);
-            cell = new PdfPCell(new Paragraph(Math.Round(SubjectRecords.SubjectData.Select(p => p.Sedentary).Average()).ToString()));
+            cell =
+                new PdfPCell(
+                    new Paragraph(Math.Round(SubjectRecords.SubjectData.Select(p => p.Sedentary).Average()).ToString()));
             cell.HorizontalAlignment = 0;
             cell.Border = 0;
             table.AddCell(cell);
@@ -389,12 +410,11 @@ namespace Actigraph.Parser.Generate_DocFiles
 
         private PdfPTable CreateSummaryTable(SummaryTableData[] summaryTable)
         {
-            
             PdfPTable table = new PdfPTable(9);
             table.HorizontalAlignment = 0;
             table.PaddingTop = 100f;
-            float[] widths = { 230f, 240f, 200f, 205f, 160f, 170f, 170f, 170f, 220f };
-            table.TotalWidth = widths.Sum(f => f) / 3f;
+            float[] widths = {230f, 240f, 200f, 205f, 160f, 170f, 170f, 170f, 220f};
+            table.TotalWidth = widths.Sum(f => f)/3f;
             table.LockedWidth = true;
             table.SetWidths(widths);
             PdfPCell cell = new PdfPCell();
@@ -438,9 +458,11 @@ namespace Actigraph.Parser.Generate_DocFiles
             table.AddCell(GetCell(tableData2.Where(t => t.Name == "Average Movements Valid Days").ToArray()[0].Value));
             table.AddCell(GetCell(tableData2.Where(t => t.Name == "Average Steps Valid Days").ToArray()[0].Value));
             table.AddCell(GetCell(SubjectRecords.SubjectValidAverages.AvgLight.ToString(CultureInfo.InvariantCulture)));
-            table.AddCell(GetCell(SubjectRecords.SubjectValidAverages.AvgLifestyle.ToString(CultureInfo.InvariantCulture)));
+            table.AddCell(
+                GetCell(SubjectRecords.SubjectValidAverages.AvgLifestyle.ToString(CultureInfo.InvariantCulture)));
             table.AddCell(GetCell(SubjectRecords.SubjectValidAverages.AvgModerate.ToString(CultureInfo.InvariantCulture)));
-            table.AddCell(GetCell(SubjectRecords.SubjectValidAverages.AvgModerate10.ToString(CultureInfo.InvariantCulture)));
+            table.AddCell(
+                GetCell(SubjectRecords.SubjectValidAverages.AvgModerate10.ToString(CultureInfo.InvariantCulture)));
             return table;
         }
 
@@ -451,7 +473,9 @@ namespace Actigraph.Parser.Generate_DocFiles
             if (isCellData)
                 times = new Font(bfTimes, 12, Font.NORMAL, BaseColor.BLACK);
             var cell = new PdfPCell();
-            cell = bgColor != null ? new PdfPCell(new Paragraph(cellText, times)) : new PdfPCell(new Paragraph(cellText));
+            cell = bgColor != null
+                ? new PdfPCell(new Paragraph(cellText, times))
+                : new PdfPCell(new Paragraph(cellText));
             cell.HorizontalAlignment = bgColor != null && !isCellData ? 1 : 0;
             cell.BackgroundColor = bgColor ?? BaseColor.WHITE;
             return cell;

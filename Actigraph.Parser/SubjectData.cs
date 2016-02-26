@@ -9,7 +9,7 @@ namespace Actigraph.Parser
    public class SubjectData
     {
         public string ID { get; set; }
-        public string Hospital { get; set; }
+        public string FamilyName { get; set; }
         public string Cottage { get; set; }
         public int Age { get; set; }
         public string Gender { get; set; }

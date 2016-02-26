@@ -41,6 +41,7 @@ namespace Actigraph.Forms.Reports
             catch (Exception exp)
             {
                 log.Error(exp);
+                MessageBox.Show(exp.Message);
             }
         }
 
@@ -71,31 +72,40 @@ namespace Actigraph.Forms.Reports
             catch (Exception exp)
             {
                 log.Error(exp);
+                MessageBox.Show(exp.Message);
             }
         }
 
         private void CreateList()
         {
-            var stagedFiles = DirectoryStructure.GetStagedFiles();
-            lblStagedFiles.Text = $"Currently you have {stagedFiles.Count()} files to process.";
-            listView1.Columns.Clear();
-            listView1.Items.Clear();
-            listView1.View = View.Details;
-            //listView1.GridLines = true;
-            listView1.FullRowSelect = true;
-            listView1.Sort();
-            //listView1.CheckBoxes = true;
-            //Add column header
+            try
+            {
+                var stagedFiles = DirectoryStructure.GetStagedFiles();
+                lblStagedFiles.Text = $"Currently you have {stagedFiles.Count()} files to process.";
+                listView1.Columns.Clear();
+                listView1.Items.Clear();
+                listView1.View = View.Details;
+                //listView1.GridLines = true;
+                listView1.FullRowSelect = true;
+                listView1.Sort();
+                //listView1.CheckBoxes = true;
+                //Add column header
 
-            // listView1.Items.AddRange(stagedFiles);
-            foreach (var itm in stagedFiles.Select(item => new ListViewItem(item)))
-            {
-                listView1.Items.Add(Path.GetFileName(itm.Text));
+                // listView1.Items.AddRange(stagedFiles);
+                foreach (var itm in stagedFiles.Select(item => new ListViewItem(item)))
+                {
+                    listView1.Items.Add(Path.GetFileName(itm.Text));
+                }
+                if (stagedFiles.Length > 0)
+                {
+                    listView1.Columns.Add("File Name", 300);
+                    listView1.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
+                }
             }
-            if (stagedFiles.Length > 0)
+            catch (Exception exp)
             {
-                listView1.Columns.Add("File Name", 300);
-                listView1.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
+                log.Error(exp);
+                MessageBox.Show(exp.Message);
             }
         }
 
@@ -113,6 +123,7 @@ namespace Actigraph.Forms.Reports
             catch (Exception exp)
             {
                 log.Error(exp);
+                MessageBox.Show(exp.Message);
             }
         }
 
@@ -152,7 +163,7 @@ namespace Actigraph.Forms.Reports
                     {
                         //CreateDocFiles files = new CreateDocFiles();
                         CreatePdfReports files = new CreatePdfReports(ThresholdCutoff)
-                        { fileExtension = @".pdf"};
+                        {fileExtension = @".pdf"};
                         files.CreateReports(item);
                         files = null;
                         processedBar.Value = i;
@@ -175,6 +186,7 @@ namespace Actigraph.Forms.Reports
                 button1.Enabled = true;
                 txtThresholdCutoff.Enabled = true;
                 MessageBox.Show(exp.Message);
+                return false;
             }
             return true;
         }
@@ -182,23 +194,32 @@ namespace Actigraph.Forms.Reports
 
         private void button1_Click(object sender, EventArgs e)
         {
-            button1.Enabled = false;
-            button1.ForeColor = Color.White;
-            if (!GenerateReports()) return;
-            DirectoryStructure.MoveProcessedFile(listView1.SelectedItems[0].SubItems[0].Text);
-            processedBar.Visible = false;
-            lblProcessing.Visible = false;
-            CreateList();
-            button1.Enabled = true;
-            txtThresholdCutoff.Enabled = true;
-            MessageBox.Show(Resources.LoadData_button1_Click_Reports_generated_Successfuuly);
-            Process.Start(Path.Combine(DirectoryStructure.ActigraphReportsFolderName,
-                DateTime.Now.ToShortDateString()));
+            try
+            {
+                button1.Enabled = false;
+                button1.ForeColor = Color.White;
+                if (!GenerateReports()) return;
+                DirectoryStructure.MoveProcessedFile(listView1.SelectedItems[0].SubItems[0].Text);
+                processedBar.Visible = false;
+                lblProcessing.Visible = false;
+                CreateList();
+                button1.Enabled = true;
+                txtThresholdCutoff.Enabled = true;
+                MessageBox.Show(Resources.LoadData_button1_Click_Reports_generated_Successfuuly);
+                Process.Start(Path.Combine(DirectoryStructure.ActigraphReportsFolderName,
+                    DateTime.Now.ToShortDateString()));
+            }
+            catch (Exception exp)
+            {
+                log.Error(exp);
+                MessageBox.Show(exp.Message);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(Resources.LoadData_button2_Click_Exit_application_, Resources.LoadData_button2_Click_Close_Application,
+            if (MessageBox.Show(Resources.LoadData_button2_Click_Exit_application_,
+                Resources.LoadData_button2_Click_Close_Application,
                 MessageBoxButtons.OKCancel) != DialogResult.Cancel)
             {
                 Application.ExitThread();
@@ -217,31 +238,39 @@ namespace Actigraph.Forms.Reports
 
         private void button3_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-
-            openFileDialog1.InitialDirectory = @"C:\";
-            openFileDialog1.Title = @"Browse Excel Files";
-
-            openFileDialog1.CheckFileExists = true;
-            openFileDialog1.CheckPathExists = true;
-
-            openFileDialog1.DefaultExt = "xlsx";
-            openFileDialog1.Filter = "Excel Files|*.xls;*.xlsx;";
-            openFileDialog1.RestoreDirectory = true;
-
-            openFileDialog1.Multiselect = true;
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                textBox2.Text = openFileDialog1.FileNames.Aggregate((current, next) => current + ", " + next);
-                foreach (var file in openFileDialog1.FileNames)
+                OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+                openFileDialog1.InitialDirectory = @"C:\";
+                openFileDialog1.Title = @"Browse Excel Files";
+
+                openFileDialog1.CheckFileExists = true;
+                openFileDialog1.CheckPathExists = true;
+
+                openFileDialog1.DefaultExt = "xlsx";
+                openFileDialog1.Filter = "Excel Files|*.xls;*.xlsx;";
+                openFileDialog1.RestoreDirectory = true;
+
+                openFileDialog1.Multiselect = true;
+
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    var extension = Path.GetExtension(file);
-                    if (extension == null || !extension.ToUpperInvariant().Contains("XLS")) continue;
-                    var fileName = Path.GetFileName(file);
-                    File.Copy(file, Path.Combine(DirectoryStructure.ActigraphDataFilesFolderName, fileName), true);
+                    textBox2.Text = openFileDialog1.FileNames.Aggregate((current, next) => current + ", " + next);
+                    foreach (var file in openFileDialog1.FileNames)
+                    {
+                        var extension = Path.GetExtension(file);
+                        if (extension == null || !extension.ToUpperInvariant().Contains("XLS")) continue;
+                        var fileName = Path.GetFileName(file);
+                        File.Copy(file, Path.Combine(DirectoryStructure.ActigraphDataFilesFolderName, fileName), true);
+                    }
+                    CreateList();
                 }
-                CreateList();
+            }
+            catch (Exception exp)
+            {
+                log.Error(exp);
+                MessageBox.Show(exp.Message);
             }
         }
     }

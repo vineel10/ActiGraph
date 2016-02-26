@@ -9,6 +9,7 @@ namespace Actigraph.Parser
         public static string ActigraphDataFilesFolderName=string.Empty;
         public static string ActigraphDataFilesProcessedFolderName = string.Empty;
         public static string ActigraphReportsFolderName = string.Empty;
+        public static string CurrentDateTime = String.Empty;
         public static int i = 0;
 
         static DirectoryStructure()
@@ -19,11 +20,10 @@ namespace Actigraph.Parser
             ActigraphDataFilesFolderName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ActigraphDataFiles");
             ActigraphDataFilesProcessedFolderName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ActigraphDataFilesProcessed");
             ActigraphReportsFolderName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ActigraphReports");
-
+            CurrentDateTime = DateTime.Now.ToShortDateString().Replace('/', '-');
             }
             catch (Exception exp)
             {
-
                 throw exp;
             }
         }
@@ -78,7 +78,7 @@ namespace Actigraph.Parser
             try
             {
            
-            var currentFolderName = Path.Combine(ActigraphReportsFolderName,DateTime.Now.ToShortDateString(), folderName + "-" + DateTime.Now.ToShortDateString());
+            var currentFolderName = Path.Combine(ActigraphReportsFolderName,CurrentDateTime, folderName + "-" + CurrentDateTime);
             if (!Directory.Exists(currentFolderName))
             {
                 Directory.CreateDirectory(currentFolderName);
@@ -100,7 +100,7 @@ namespace Actigraph.Parser
             try
             {
             string absolutePath = Path.Combine(DirectoryStructure.ActigraphDataFilesFolderName, processedFile);
-            File.Copy(absolutePath, Path.Combine(ActigraphDataFilesProcessedFolderName,Path.GetFileNameWithoutExtension(processedFile) + DateTime.Now.ToShortDateString() + Path.GetExtension(processedFile)),true);
+            File.Copy(absolutePath, Path.Combine(ActigraphDataFilesProcessedFolderName,Path.GetFileNameWithoutExtension(processedFile) + CurrentDateTime + Path.GetExtension(processedFile)),true);
             File.Delete(absolutePath);
             }
             catch (Exception exp)

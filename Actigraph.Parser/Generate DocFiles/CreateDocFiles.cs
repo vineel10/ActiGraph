@@ -69,11 +69,10 @@ namespace Actigraph.Parser.Generate_DocFiles
             var data = (from rec in subjectData
                 select new
                 {
-                    ID = rec.ID,
-                    Hospital = rec.Hospital,
-                    Cottage = rec.Cottage,
-                    Age = rec.Age,
-                    Gender = rec.Gender
+                    rec.ID,
+                    rec.Cottage,
+                    rec.Age,
+                    rec.Gender
                 }).FirstOrDefault();
 
             foreach (var item in (data.GetType().GetProperties()))

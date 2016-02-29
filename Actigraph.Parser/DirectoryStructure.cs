@@ -20,7 +20,7 @@ namespace Actigraph.Parser
             ActigraphDataFilesFolderName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ActigraphDataFiles");
             ActigraphDataFilesProcessedFolderName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ActigraphDataFilesProcessed");
             ActigraphReportsFolderName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ActigraphReports");
-            CurrentDateTime = DateTime.Now.ToShortDateString().Replace('/', '-');
+            CurrentDateTime = DateTime.Now.ToShortDateString().Replace('/','-');
             }
             catch (Exception exp)
             {

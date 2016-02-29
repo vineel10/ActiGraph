@@ -207,7 +207,7 @@ namespace Actigraph.Forms.Reports
                 txtThresholdCutoff.Enabled = true;
                 MessageBox.Show(Resources.LoadData_button1_Click_Reports_generated_Successfuuly);
                 Process.Start(Path.Combine(DirectoryStructure.ActigraphReportsFolderName,
-                    DateTime.Now.ToShortDateString()));
+                    DirectoryStructure.CurrentDateTime));
             }
             catch (Exception exp)
             {

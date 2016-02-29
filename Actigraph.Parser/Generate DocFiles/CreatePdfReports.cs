@@ -248,7 +248,7 @@ namespace Actigraph.Parser.Generate_DocFiles
             para.Font.SetStyle("bold");
             para.Alignment = Element.ALIGN_CENTER;
             doc.Add(para);
-            para = new Paragraph("Report Date: " + DateTime.Now.ToShortDateString());
+            para = new Paragraph("Report Date: " + DirectoryStructure.CurrentDateTime);
             para.Font.SetStyle("bold");
             para.Alignment = Element.ALIGN_RIGHT;
             doc.Add(para);
@@ -321,7 +321,7 @@ namespace Actigraph.Parser.Generate_DocFiles
             var subjectId = tableData1.Where(i => i.Name == "ID").ToArray()[0].Value;
             var folderName = DirectoryStructure.CreateSubjectFolder(subjectId);
             string fileName = Path.Combine(folderName,
-                subjectId + "-" + DateTime.Now.ToShortDateString() + fileExtension);
+                subjectId + "-" + DirectoryStructure.CurrentDateTime + fileExtension);
             if (File.Exists(fileName))
             {
                 fileName = Path.Combine(folderName,

@@ -164,7 +164,7 @@ namespace Actigraph.Parser.Generate_DocFiles
                 }
 
                 document.Content.SetRange(0, 0);
-                document.Content.Text = "Report Date: " + DateTime.Now.ToShortDateString() + Environment.NewLine;
+                document.Content.Text = "Report Date: " + DirectoryStructure.CurrentDateTime + Environment.NewLine;
                 document.Content.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphRight;
                 document.Content.Font.Size = 10;
                 document.Content.Bold = 1;
@@ -255,7 +255,7 @@ namespace Actigraph.Parser.Generate_DocFiles
             Object oMissing = Missing.Value;
             var subjectId = tableData1.Where(i => i.Name == "ID").ToArray()[0].Value;
                 var folderName = DirectoryStructure.CreateSubjectFolder(subjectId);
-                object fileName = Path.Combine(folderName, subjectId + "-" + DateTime.Now.ToShortDateString() + fileExtension);
+                object fileName = Path.Combine(folderName, subjectId + "-" + DirectoryStructure.CurrentDateTime + fileExtension);
                 if (File.Exists(fileName.ToString()))
                 {
                 fileName = Path.Combine(folderName,

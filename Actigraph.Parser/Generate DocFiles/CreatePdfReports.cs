@@ -269,15 +269,13 @@ namespace Actigraph.Parser.Generate_DocFiles
             para.Alignment = Element.ALIGN_LEFT;
             doc.Add(para);
             doc.Add(new Paragraph("\n"));
-            //Start Table-2
-            //doc.Add(CreateTable(tableData2, "Subject Summary Details"));
-            //Insert Graph
-            para = new Paragraph("Graph Showing Subject Averages");
+            para = new Paragraph("Graphs Showing Subject Averages (All Values in Minutes)");
             para.Font.SetStyle("bold");
             para.Font.SetStyle("underline");
             para.Alignment = Element.ALIGN_LEFT;
             para.PaddingTop = 50f;
             doc.Add(para);
+            doc.Add(new Paragraph("\n"));
             PdfPTable table = new PdfPTable(2);
             table.PaddingTop = 50f;
 
@@ -425,22 +423,20 @@ namespace Actigraph.Parser.Generate_DocFiles
             cell.PaddingBottom = 20f;
             table.AddCell(cell);
             table.DefaultCell.Border = Rectangle.NO_BORDER;
-            //Cell-1
-
+            
             table.AddCell(GetCell("Date", BaseColor.BLUE));
             table.AddCell(GetCell("Day of Week", BaseColor.BLUE));
-            table.AddCell(GetCell("Wear Time", BaseColor.BLUE));
+            table.AddCell(GetCombinedCellText("Wear Time","(in Min)"));
             table.AddCell(GetCell("Movements Per Minute", BaseColor.BLUE));
-            table.AddCell(GetCell("Steps", BaseColor.BLUE));
-            table.AddCell(GetCell("Light", BaseColor.BLUE));
-            table.AddCell(GetCell("Life Style", BaseColor.BLUE));
-            table.AddCell(GetCell("Moderate", BaseColor.BLUE));
-            table.AddCell(GetCell("Moderate-10", BaseColor.BLUE));
+            table.AddCell(GetCombinedCellText("Steps", "(in Min)"));
+            table.AddCell(GetCombinedCellText("Light", "(in Min)"));
+            table.AddCell(GetCombinedCellText("Life Style", "(in Min)"));
+            table.AddCell(GetCombinedCellText("Moderate", "(in Min)"));
+            table.AddCell(GetCombinedCellText("Moderate-10", "(in Min)"));
             //Create data rows
             foreach (var data in summaryTable)
             {
                 var color = data.Wear_Time < ThresholdCutOffValid ? BaseColor.LIGHT_GRAY : null;
-
                 table.AddCell(GetCell(data.Date, color, true));
                 table.AddCell(GetCell(data.Day_of_Week, color, true));
                 table.AddCell(GetCell(data.Wear_Time.ToString(CultureInfo.InvariantCulture), color, true));
@@ -464,6 +460,19 @@ namespace Actigraph.Parser.Generate_DocFiles
             table.AddCell(
                 GetCell(SubjectRecords.SubjectValidAverages.AvgModerate10.ToString(CultureInfo.InvariantCulture)));
             return table;
+        }
+
+        private PdfPCell GetCombinedCellText(string text1, string text2)
+        {
+            BaseFont bfTimes = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, false);
+            var titleChunk = new Chunk(text1, new Font(bfTimes, 12, Font.NORMAL, BaseColor.WHITE));
+            var descriptionChunk = new Chunk(text2, new Font(bfTimes, 8, Font.NORMAL, BaseColor.BLACK));
+            var phrase = new Phrase(titleChunk);
+            phrase.Add(new Paragraph("\n"));
+            phrase.Add(descriptionChunk);
+            var pdfCell = new PdfPCell(phrase);
+            pdfCell.BackgroundColor = BaseColor.BLUE;
+            return pdfCell; 
         }
 
         private PdfPCell GetCell(string cellText, BaseColor bgColor = null, bool isCellData = false)
